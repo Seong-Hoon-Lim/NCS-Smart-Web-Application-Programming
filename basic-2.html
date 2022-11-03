@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- 위의 구분은 dtd문입니다 -->
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>HTML 계층구조</title>
+	</head>
+	<body>
+		<h1>계층</h1>
+		<p>모든 태그는 계층화가 이루어져있다.</p>
+		<script>
+		  const heading = document.querySelector('h1');
+		  const pText = document.querySelector('p');
+		  console.log(heading);
+		  console.log(pText);
+		  heading.addEventListener('click', ()=>{
+		    pText.innerText = '반갑습니다.';
+			})
+		</script>
+	</body>
+</html>
