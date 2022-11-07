@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>테이블</title>
+    <style>
+        table { border-collapse: collapse; }
+        th,td { border: 1px solid black; 
+            width: 150px; height: 50px;}
+    </style>
+</head>
+<body>
+    <table>
+        <caption>품질마크 연도별 통계</caption>
+        <colgroup>
+            <col>
+            <col span="2" style="background-color: yellow">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th scope="col">연도</th>
+            <th scope="col" id="appsite">신청 사이트 수</th>
+            <th scope="col" id="authsite">인증 사이트 수</th>
+            <th scope="col" id="accept">합격률</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row" id="year1">2007년</th>
+            <td headers="appsite year1">40</td>
+            <td headers="authsite year1">15</td>
+            <td headers="accept year1">37.5%</td>
+        </tr>
+        <tr>
+            <th scope="row" id="year2">2008년</th>
+            <td headers="appsite year2">40</td>
+            <td headers="authsite year2">15</td>
+            <td headers="accept year2">37.5%</td>
+        </tr>
+        <tr>
+            <th scope="row" id="year3">2009년</th>
+            <td headers="appsite year3">40</td>
+            <td headers="authsite year3">15</td>
+            <td headers="accept year3">37.5%</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th scope="row" id="total">합계</th>
+            <td headers="appsite total">1489</td>
+            <td headers="authsite total">448</td>
+            <td headers="accept total">30.09%</td>
+        </tr>
+        </tfoot>
+    </table>    
+    
+</body>
+</html>

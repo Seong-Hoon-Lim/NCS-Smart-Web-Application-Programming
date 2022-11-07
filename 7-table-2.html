@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>표만들기</title>
+        <style>
+        table { border-collapse: collapse; }
+        th,td { border: 1px solid black; 
+            width: 150px; height: 50px;}
+        </style>
+</head>
+<body>
+
+    <table>
+        <caption>표제목</caption>
+        <thead> <!-- 표의 머릿말 td대신 th만 올 수 있다 -->
+        <tr>
+            <th>Header1</th>
+            <th>Header2</th>            
+        </tr>
+        </thead>
+        <tbody> <!-- 표의 컨텐츠 -->
+        <tr>
+            <td>Data1</td>
+            <td>Data1</td>
+        </tr>
+        <tr>
+            <td>Data2</td>
+            <td>Data2</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td>Total1</td>
+            <td>Total2</td>
+        </tr>
+        </tfoot> <!-- 표의 말미부분, 없을 수도 있음 -->
+
+    </table>
+    
+</body>
+</html>

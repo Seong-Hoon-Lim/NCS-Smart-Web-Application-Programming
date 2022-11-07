@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본 폼 요소, form</title>
+</head>
+<body>
+    <form name="fm">
+        <input type="text" name="idName" maxlength="5" 
+            value="입력값" placeholder="설명글입력"><br>
+        <input type="password" name="pw" placeholder="비밀번호입력">
+        <input type="button" value="확인"><br>
+        <input type="submit" value="전송" name="btn"><br>
+        <input type="reset" value="다시작성"><br>
+        <button>입력</button><br>
+        <input type="image" src="./images/login.jpg" alt="로그인"><br>
+        <input type="checkbox" name="hobby" value="tennis">테니스        
+        <input type="checkbox" name="hobby" value="bawling">볼링  
+        <input type="checkbox" name="hobby" value="walking">걷기<br>
+        <!-- input type="radio" 는 1개 체크가 가능하며, 
+                반드시 name로 묶여 있어야 한다. -->
+        <input type="radio" name="agree">약관에 동의합니다<br>
+        <input type="radio" name="agree">약관에 동의하지 않습니다<br>
+        <input type="file"><br>
+        <textarea rows="5" cols="50" placeholder="문의내용을 입력하세요"></textarea><br>
+        <!-- <select> -->
+        <select multiple>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <optgroup label="JS">
+            <option value="JavaScript">JavaScript</option>
+            <option value="jQuery">jQuery</option>
+            </optgroup>
+        </select>
+
+    </form>
+    <!-- <script>
+        const idName = document.fm.idName;
+        const btn = document.fm.btn;
+        console.log(idName)
+        console.log(btn)
+        btn.addEventListener('click', ()=> {
+            alert(idName.value)
+
+        })
+    </script> -->
+</body>
+</html>
