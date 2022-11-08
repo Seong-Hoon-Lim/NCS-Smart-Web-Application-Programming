@@ -6,15 +6,15 @@
 </head>
 <body>
     <form name="fm">
-        <input type="text" name="idName" maxlength="5" 
+        <input type="text" disabled name="idName" maxlength="5" 
             value="입력값" placeholder="설명글입력"><br>
-        <input type="password" name="pw" placeholder="비밀번호입력">
+        <input type="password" autofocus required name="pw" placeholder="비밀번호입력">
         <input type="button" value="확인"><br>
         <input type="submit" value="전송" name="btn"><br>
         <input type="reset" value="다시작성"><br>
         <button>입력</button><br>
         <input type="image" src="./images/login.jpg" alt="로그인"><br>
-        <input type="checkbox" name="hobby" value="tennis">테니스        
+        <input type="checkbox" checked name="hobby" value="tennis">테니스        
         <input type="checkbox" name="hobby" value="bawling">볼링  
         <input type="checkbox" name="hobby" value="walking">걷기<br>
         <!-- input type="radio" 는 1개 체크가 가능하며, 
@@ -24,9 +24,9 @@
         <input type="file"><br>
         <textarea rows="5" cols="50" placeholder="문의내용을 입력하세요"></textarea><br>
         <!-- <select> -->
-        <select multiple>
+        <select>
             <option value="html">HTML</option>
-            <option value="css">CSS</option>
+            <option value="css" selected >CSS</option>
             <optgroup label="JS">
             <option value="JavaScript">JavaScript</option>
             <option value="jQuery">jQuery</option>
