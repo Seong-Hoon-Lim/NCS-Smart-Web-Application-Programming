@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상태선택자 활용2</title>
+    <style> 
+        div { border: 1px solid black;
+              width: 600px; height: 80px;
+              overflow: hidden;
+              transition: 0.5s; }
+
+        /* check1을 클릭 시 #content1의 높이를 300 */
+        #check1:checked ~ #content1 { height: 300px; }
+
+        /* check2을 클릭 시 #content2의 높이를 300 */
+        #check2:checked ~ #content2 { height: 300px; }
+              
+
+    </style>
+</head>
+<body>
+   <input type="radio" name="check" id="check1" checked>
+   <input type="radio" name="check" id="check2">
+   <div id="content1">
+        <h1>Lorem ipsum</h1>
+        <p>Lorem Ipsum is simply dummy 
+            text of the printing and typesetting industry</p>
+   </div>
+   <div id="content2">
+    <h1>Lorem ipsum</h1>
+    <p>Lorem Ipsum is simply dummy 
+        text of the printing and typesetting industry</p>
+</div>
+
+</body>
+</html>

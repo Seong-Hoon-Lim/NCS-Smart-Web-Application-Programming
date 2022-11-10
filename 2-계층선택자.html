@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자손/자식 선택자</title>
+    <style>
+        div h1 { color: red; }
+        div div h1 { background-color: yellow; }
+        #wrap > h1 { font-size: 50px; }
+        /* 자식 선택자 지정 할 때 > 부등호 기호를 사용
+            반대의 경우는 없음 */
+        body > h1 { border: 1px solid #000; }
+        
+        body > ul >li { border: 1px solid #000; } 
+
+
+
+    </style>
+</head>
+<body>
+    <h1>제목1</h1>
+    <div id="wrap">
+        <h1>제목2</h1>
+        <div>
+            <h1>제목3</h1>
+        </div>
+    </div>
+    <ul>
+        <li>리스트1</li>
+        <li>리스트2
+            <ul>
+                <li>리스트2-1</li>
+                <li>리스트2-2</li>
+            </ul>
+        </li>
+    </ul>    
+</body>
+</html>

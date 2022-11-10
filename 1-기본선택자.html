@@ -11,6 +11,20 @@
         .s1 { color: green; }
         .s2 { background-color: lightgreen; } */
         
+        /* 전체선택자 */
+        * { border: 2px solid black; }
+        /* 태그선택자 */
+        h1 { color: red; }
+        /* 아이디선택자 */
+        /* 중복허용 안됨.
+            대소문자구분
+            특수기호는(_, -) 허용
+            숫자와 특수기호의 첫글자에 쓸 수 없음
+            반드시 영문으로 시작 */
+        #p1 { color: orange; }
+        /* 클래스선택자 */
+        p.s1 { background-color: yellow; }
+        
 
     </style>
 </head>
@@ -18,18 +32,19 @@
     <h1>CSS 선택자</h1>    
     <p id="p1" class="s1">스타일시트를 적용하는 대상을 선택자(selector)라고 한다</p>
     <h2>선택자 종류</h2>
-    <p class="s2">다양한 선택자에 대해서 알아봅시다</p>
+    <p class="s1">다양한 선택자에 대해서 알아봅시다</p>
     <ul>
         <li>전체선택자</li>
         <li>태그선택자</li>
         <li class="s1 s2">아이디선택자</li>
         <li class="s1">클래스선택자</li>
     </ul>
-    <style>
+    <!-- <style>
+        #p1 {  }
         .s1 { color: red; }
         p.s1 { background-color: yellow; }
         li.s1 { background-color: lightsalmon; }
-    </style>
+    </style> -->
 
 </body>
 </html>

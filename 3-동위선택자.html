@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>동위, 형제, 이웃, 인접</title>
+    <style> 
+        h1 + h2 { color: red; }
+        h1 ~ h2 { background-color: yellow; }
+        /* 하위 태그가 아닌 인접 태그 중 바로 다음 태그를
+            선택할 경우 '+' 기호를 사용
+            
+            인접 태그 중 다수의 태그를 선택할 경우
+            '~' 기호를 사용*/
+        ul li + li { color: blue; }
+    </style>
+</head>
+<body>
+    <h2>제목2</h2>
+    <h1>제목1</h1>
+    <h2>제목2</h2>
+    <h2>제목2</h2>
+    <h2>제목2</h2>
+    <h2>제목2</h2>
+    <ul>
+        <li>리스트1</li>
+        <li>리스트2</li>
+    </ul>
+</body>
+</html>
