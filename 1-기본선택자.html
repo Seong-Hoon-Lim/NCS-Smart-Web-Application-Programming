@@ -11,10 +11,16 @@
         .s1 { color: green; }
         .s2 { background-color: lightgreen; } */
         
+        /* 최상위 선택자 */
+        /* 변수 지정 : --변수명-속성
+            var(변수명) */
+        :root { --h-size: 50px; }
         /* 전체선택자 */
         * { border: 2px solid black; }
         /* 태그선택자 */
-        h1 { color: red; }
+        h1 { color: red; font-size: var(--h-size); }
+        h2 { font-size: var(--h-size); }
+        /* h1 { color: red; } */
         /* 아이디선택자 */
         /* 중복허용 안됨.
             대소문자구분

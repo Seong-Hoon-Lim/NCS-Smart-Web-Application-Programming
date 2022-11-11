@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구조선택자(일반, 형태)</title>
+    <style> 
+        /* 자식요소들이 여러태그들로 구성될 때 */
+        /* div > *:nth-child(1) { color: red; } */
+        div > h1:first-child { color: red; }
+        div > p:nth-child(2) { color: red; }
+        div > p:last-child { color: red; }
+        div > p:nth-last-child(2) { color: green; }
+
+        div > p:nth-of-type(2) { background-color: yellow; }
+        
+        ul li:nth-child(odd) { background-color: green; }
+        ul li:nth-child(even) { background-color: yellow; }
+        /* ul li:nth-child(2n+1) { background-color: green; }
+        ul li:nth-child(2n) { background-color: yellow; } */
+
+        div > :only-child { background-color: orange; }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>Lorem Ipsum</p>
+    </div>
+    <div>
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>Lorem ipsum dolor sit amet</p>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+    <ul>
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+        <li>리스트4</li>
+        <li>리스트5</li>
+    </ul>
+</body>
+</html>

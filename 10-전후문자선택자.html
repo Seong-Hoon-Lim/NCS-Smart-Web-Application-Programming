@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>전후문자선택자</title>
+    <style> 
+       h1::before { content: "*"; font-size: 50px; color: red;}
+       /* "*" 는 가상 요소이나 없는 요소가 아님 */
+       h1::first-letter { background-color: yellow; }
+       p::after { content: "- The end"; color: blue;}
+
+    </style>
+</head>
+<body>
+    <h1>What is Lorem Ipsum?</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing 
+        and typesetting industry. Lorem Ipsum has been 
+        the industry's standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and 
+        scrambled it to make a type specimen book
+    </p>
+
+
+</body>
+</html>

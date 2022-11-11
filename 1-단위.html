@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>단위</title>
+    <style>
+        /* 경로단위 */
+        body { background-image: url(./images/background.png);
+                margin: 0; 
+                width: 1000px;
+                border: 1px solid rgb(0, 0, 0);
+            }
+        /* 크기단위
+            절대단위 : pixel(px), point(pt),
+            상대단위 : em(배수), %, rem, vw, vh */
+            /* 단위 참고사이트 : http://pxtoem.com/ */
+        section { background-color: rgba(99, 178, 243, 0.3); color: #fff;
+                    /* width:300px; */ height: 200px;
+                    /* width: 225pt; */
+                    /* width: 100%; */ /* % 는 부모의 요소의 비율을 따른다 */
+                    width: 100vw; /* vw는 장치의 비율을 따른다 */
+                }
+        /* 색상단위 */
+        h1 { background-color: #cbf5f5; }
+        h2 { background-color: rgb(170, 0, 170); }
+        h3 { background-color: rgba(170, 0, 170, 0.5); }
+        h4 { background-color: hsl(194deg, 50%, 50%); }
+        h5 { background-color: hsla(194deg, 50%, 50%, 0.5); }
+
+    </style>
+
+</head>
+<body>
+    <section>
+        영역지정
+    </section>
+    <div>
+        <h1>header1</h1>
+        <h2>header2</h2>
+        <h3>header3</h3>
+        <h4>header4</h4>
+        <h5>header5</h5>
+    </div>
+    
+</body>
+</html>
