@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>여백속성</title>
+    <style>
+        body { margin: 0;
+             }
+        #parent { width: 400px; height: 400px;
+                    background-color: #000;
+                    box-sizing: border-box;
+                    padding-top: 200px;
+                    padding-left: 200px;
+
+                    /* box-sizing: border-box; */
+                 }
+        #child { width: 200px; height: 200px;
+                    background-color: #ff0;
+
+                 }
+
+        #child a { background-color: #43ee84;
+                    /* padding: 10px 20px; */
+                     display: block;
+                     width: 100px; height: 50px;
+                } 
+    </style>
+
+</head>
+<body>
+    <div id="parent">
+        <div id="child">
+            <a href="#">링크 영역</a>
+        </div>
+    </div>
+
+</body>
+</html>

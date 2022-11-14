@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>여백속성, padding</title>
+    <style>
+       body, h1 { margin: 0; }
+       div { width: 500px; height: 300px;
+                border: 1px solid#000;
+                margin: 20px 0 0 30px;
+                /* padding-top: 50px;
+                padding-left: 100px; */
+                padding: 50px;
+                /* padding과 border가 넓이에 영향을 주는 것을 
+                    방지하는 속성 */
+                box-sizing: border-box;
+            }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>제목입니다</h1>
+    </div>
+
+</body>
+</html>

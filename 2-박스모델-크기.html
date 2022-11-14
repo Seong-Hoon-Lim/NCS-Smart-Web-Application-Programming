@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>width, height</title>
+    <style>
+        h1 { background-color: #aad79e;
+            width: 500px; height: 200px;
+            margin: 0; }
+
+        p { background-color: #d4bfff;
+            width: 700px; height: 150px;
+            margin: 0; }
+
+        /* 텍스트 인라인 요소는 넓이 높이가 적용되지 않음 */
+        a { background-color: #8cf3ea; display: block;
+            width: 300px; height: 200px; }
+
+        /* 단, 다음처럼 요소 자체가 영역이 있는 요소는 
+            넓이, 높이가 적용됨 */
+        input[text] { background-color: #c2b9f8; display: block;
+                        width: 300px; height: 200px; }
+
+        img[src="./images/sample.png"] { background-color: #c637f1; display: block;
+                width: 300px; }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>제목1</h1>
+        <p>문단1</p>
+    </div>
+    <a href="#">링크1</a>
+    <input type="text">
+    <img src="./images/sample.png" alt="석양">
+    
+</body>
+</html>

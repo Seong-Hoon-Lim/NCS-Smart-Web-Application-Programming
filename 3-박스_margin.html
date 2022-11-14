@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>여백속성, margin</title>
+    <style>
+        body { 
+            /* margin-top: 20px;
+            margin-right: 50px;
+            margin-bottom: 30px;
+            margin-left: 50px; */
+
+            /* top을 기준으로 시계방향 */
+            /* margin: 20px 50px 30px 50px; */
+
+            /* 50px 30px 50px 30px 반복 시*/
+            /* margin: 50px 30px;  */
+
+            /* 50px 30px 100px 30px 좌우 반복 시*/
+            /* margin: 50px 30px 100px; */
+
+            /* 값이 모두 같을 경우 한 요소만 작성
+                0의 경우에는 단위를 생략할 수 있음*/
+            /* margin-top: 0; */
+
+        }
+
+        #box1 { background-color: #f6b0bf;
+            width: 200px; height: 200px; 
+            margin-bottom: 100px;
+         }
+
+         #box2 { background-color: #92f08a;
+            width: 200px; height: 200px;
+            margin-top: 50px;
+            
+         }
+
+         /* margin값이 위아래 중첩될 경우 하나의 값(or 큰값)만 적용*/
+
+    </style>
+
+</head>
+<body>
+    <div id="box1">박스요소1</div>
+    <div id="box2">박스요소2</div>
+</body>
+</html>

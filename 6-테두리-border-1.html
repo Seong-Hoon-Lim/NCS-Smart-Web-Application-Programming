@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">   
+    <title>테두리 속성</title>
+    <style>
+        div { width: 400px; height: 400px;
+            /* border-width: 10px;
+            border-style: solid;
+            border-color: black; */
+            /* border: 10px solid #000; */
+            border: 10px ridge #b1b1b1;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        /* 선종류 : solid, dotted, dashed, double
+                    inset, outset, groove, ridge */
+
+        div h1 { 
+                border: 1px solid #000;
+                border-left: 0;
+                border-right: 0;
+                border-top: 5px solid #f00;
+                border-bottom: 2px solid #00f;
+
+                }
+        
+        input { border: 0; background-color: #86ebc2; 
+                /* outline: 0; */
+              }
+
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <br>
+    <br>
+    <div>
+        <h1>Lorem ipsum dolor amet</h1>
+    </div>
+</body>
+</html>
