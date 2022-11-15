@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>테이블에 테두리 적용하기</title>
+    <style>
+        table { 
+            border-collapse: collapse;
+            border-top: 5px solid #000;
+            border-bottom: 3px solid #000;
+            }
+        td { border-bottom: 1px solid #000; }
+        td:first-child { border-right: 1px solid #000; }
+
+        /* <tr><td> 의 구조가 복잡할 경우 구조 선택자 보다는 각 td 에
+            class 를 설정하여 선택하는 것이 편리하다 */
+        
+
+    </style>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1행1열</td>
+            <td>1행2열</td>
+        </tr>
+        <tr>
+            <td>2행1열</td>
+            <td>2행2열</td>
+        </tr>
+    </table>
+
+</body>
+</html>

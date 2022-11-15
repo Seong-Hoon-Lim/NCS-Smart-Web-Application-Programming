@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>둥근테두리 속성, border-radius</title>
+    <style>
+        div { width: 300px; height: 300px; 
+              border: 1px solid #000;
+              /* border-top-left-radius: 50px; */
+              /* border-radius: 20px 50px 100px 150px; */
+              border-radius: 0 100px;
+              transition: 0.5s;        
+            }
+
+        div:hover { border-radius: 0; }
+
+        div h1 { height: 100%; margin: 0;
+                 background-color: rgba(132,157,219,0.64);
+                 /* border-radius: 150px; */
+                 border-radius: 50%;
+               }
+
+        div h2 { width: 100px; height: 200px;
+                 border: 1px solid #000;
+                 background-color: rgba(112, 177, 250, 0.44);
+                 border-radius: 0 100px 100px 0;
+        
+               }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1></h1>
+    </div>
+    <div>
+        <h2>반달</h2>
+    </div>
+
+</body>
+</html>
