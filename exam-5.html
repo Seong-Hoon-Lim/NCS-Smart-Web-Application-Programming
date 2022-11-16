@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>영상 배경처리 예제</title>
+    <style>
+        body { padding: 0px; margin: 0px;
+               /* background-image: url(./images/노을.jpg);
+               background-repeat: no-repeat; */
+            }
+        .jb-box { position: absolute; top: 50%; 
+                  overflow: hidden;margin: 0 auto;
+                  position: relative;                  
+                }
+        video { width: 100%; }
+        .jb-text { position: absolute; top: 0; width: 30%;
+                   margin-top: 30px;
+                   margin-left: 30px;
+                   border-top: 5px solid #fff;
+                   border-bottom: 3px solid #fff;
+                   transition: 0.3s;
+                    }
+        .jb-text h1, p { margin-top: 0; text-align: left;
+                         color: #fff;
+                      }
+
+        .jb-text:hover { border: 3px solid #fff; }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="jb-box">
+            <video muted autoplay loop>
+                <source src="./images/Santorini.mp4" type="video/mp4">
+                <strong>Your browser does not support the video tag.</strong>
+            </video>
+        </div>
+        <div class="jb-text">
+            <h1>Welcome</h1>
+            <p>Greece Santorini Thira Island</p>
+        </div>
+    </section>
+</body>
+</html>

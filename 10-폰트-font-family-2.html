@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">   
+    <title>웹폰트</title>
+    <link href="https://fonts.googleapis.com/css2?family=
+    Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" 
+    rel="stylesheet">    
+    <style>
+        * { font-weight: normal; }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+        
+        /* 직접 변환 */
+        @font-face { 
+            font-family: chery; 
+            src:url(./webfont/cheri.ttf),
+                url(./webfont/cheri.eot),
+                url(./webfont/cheri.woff)
+                }
+
+        @font-face {
+            font-family: 'S-CoreDream-3Light';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+}
+        h1 { font-family: chery; }
+        
+        /* CND 방식 link나 import를 활용하여 웹폰트 적용 */
+        h2 { font-family: 'Noto Sans KR', sans-serif; }
+        h3 { font-family: S-CoreDream-3Light; }
+        
+
+    </style>
+</head>
+<body>
+    <h1>Lorem Ipsum 1234</h1>
+    <h2>Lorem Ipsum 로렘입섬 1234</h2>
+    <h3>Lorem Ipsum 로렘입섬 1234</h3>
+
+</body>
+</html>

@@ -4,41 +4,29 @@
     <meta charset="UTF-8">
     <title>배경예제</title>
     <style>
-        body { padding: 0px; margin: 0px; }
-        div.jb-box { width: 100vh; height: 500px; 
-                    overflow: hidden;margin: 0px 
-                    auto; position: relative; 
-                    }
-        video { width: 100%; height: 500px;
-                size: 100vh;
-             }
+        body { height: 100vh; margin: 0;
+               background: url(./images/노을.jpg) no-repeat;
+            }
 
-            div.jb-text {
+        div { 
               color: #fff;
-              position: absolute;
               width: 300px; height: 120px;
-              margin: 20px 0 0 20px ;
-              border-top: 5px solid #fff;
-              border-bottom: 5px solid #fff;
-              transition: 0.5s;
-
+              margin: 40px 0 0 20px ;
+              border-top: 3px solid #fff;
+              border-bottom: 5px solid #fff;     
+              transition: 0.3s;
+              
              }
 
-        div:hover { border: 5px solid #fff; }
+        div:hover { border: 3px solid #fff; }
 
     </style>
 </head>
 <body>
-    <div class="jb-box">
-        <video muted autoplay loop>
-            <source src="https://videos.pond5.com/sunset-santorini-greece-footage-073996165_main_xxl.mp4" type="video/mp4">
-    </div>
-    <div class="jb-text">
+    <div>
         <h1>Welcome</h1>
-        <p>Greece Santorini Thira Island</p>
+        <p>Greece Santorini Thira Island</p>          
     </div>
-
-
 
 </body>
 </html>
