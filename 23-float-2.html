@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">  
+    <title>float를 활용한 레이아웃</title>
+    <style>
+        /* 초기화 */
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+
+        /* 헤더 */
+        #headerWrap { width: 100%; height: 200px;
+                      background: #a998f5;
+                      padding-top: 100px;
+                      /* overflow: auto; */
+                     }
+        #header { width: 1000px; height: 100px;
+                  background: #897cff; 
+                  /* position: relative; top: 100px; */
+                  /* margin: 100px auto 0; */
+                  /* margin-top: 100px; */
+                  position: absolute;
+                  top: 100px;
+                  /* left: calc(50% - 500px);  값이 정해져 있어야 쓸 수 있다 */ 
+                  left: 50%;
+                  /* margin-left: -500px; 값이 정해져 있어야 쓸 수 있다 */
+                  transform: translateX(-50%);
+                  
+                 }
+
+        /* 컨텐츠 */
+        #content { width: 1000px; margin: 50px auto;
+                   background: #d6ff75; 
+                   /* overflow: auto; */
+
+                 }
+        #content::after { content: ""; display: block; clear: both; }
+        /* 메인본문 */
+        main { float: left; width: 750px; }        
+        #content1 { float: left; width: 400px; height: 400px;
+                    background: #67cff8;
+                  }
+        #content2 { float: right; width: 300px; height: 400px;
+                    background: #76f5fa;
+                  }
+
+        /* aside */
+        #side { float: right; width: 200px; height: 300px;
+                background: #3ba0f3;
+              }
+
+        /* 푸터 */
+        #footerWrap { border-top: 1px solid #000;
+                      /* clear: both; */
+
+                     }
+        footer { width: 1000px; height: 150px;
+                 margin: 0 auto;
+                 background: #71f3d7;
+                }
+
+        /* float 영향을 해지하는 방법
+            1. float를 적용한 요소의 부모가 없는 경우
+             - float를 적용한 다음 요소에 clear속성 적용(left, right, both)
+            2-1. float를 적용한 요소의 부모가 있는 경우
+             - 부모요소에 ::after 선택자를 적용하여 다음의 세가지 속성을 적용
+             ex) parent::after { content: "", display: block; clear: both; }
+            2-2. 부모요소에 overflow나 높이값을 적용
+        */
+
+
+    </style>
+</head>
+<body>
+    <div id="headerWrap">
+        <header id="header">헤더</header>
+    </div>
+    <div id="content">
+        <main>
+            <section id="content1">섹션1</section>
+            <section id="content2">섹션2</section>
+        </main>
+        <aside id="side">어사이드</aside>
+    </div>
+    <div id="footerWrap">
+        <footer id="footer">푸터</footer>
+    </div>
+
+    
+</body>
+</html>

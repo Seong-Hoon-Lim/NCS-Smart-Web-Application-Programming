@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"> 
+    <title>float, 부유속성</title>
+    <style>
+        p { 
+            width: 300px; margin: 0;
+            border: 1px solid #000;
+         }
+        p::first-letter { font-size: 30px; }
+        img { float: left; border: 1px solid #000; }
+        p:first-of-type { float: left; }
+        p:last-of-type { float: left; }
+
+        /* float를 적용한 다음 요소가 영향을 받는 경우
+            clear 속성을 적용하여 영향을 해지한다 */
+        h1 { clear: both; }
+
+    </style>
+</head>
+<body>
+    <img src="./images/w3c.png" alt="w3c">
+    <p>1.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </p>
+    <p>2.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+    </p>
+    <h1>Lorem Ipsum is simply dummy</h1>
+</body>
+</html>

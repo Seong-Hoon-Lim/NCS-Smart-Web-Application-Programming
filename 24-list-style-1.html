@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>리스트 스타일</title>
+    <style>
+        /* 초기화 */
+        body, ul, ol { margin: 0; padding: 0; }
+
+        ul { background: #b4e6be; }        
+        ol { background: #f5b1fc; }
+
+        ul li { 
+                list-style: none;
+                font-size: 30px;
+                background: #50df50 url(./images/bullet.png) no-repeat 5px;
+                /* padding-left: 20px; */
+                text-indent: 20px;
+
+                /* list-style-type: square;
+                list-style-position: outside;
+                list-style-image: url(./images/bullet.png); */
+
+              }
+
+        ol li { 
+                list-style-type: decimal-leading-zero;
+              }
+
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Lorem Ipsum</li>
+        <li>Lorem Ipsum</li>
+        <li>Lorem Ipsum</li>
+        <li>Lorem Ipsum</li>
+    </ul>
+    <ol>
+        <li>Lorem Ipsum</li>
+        <li>Lorem Ipsum</li>
+        <li>Lorem Ipsum</li>
+        <li>Lorem Ipsum</li>
+</body>
+</html>
