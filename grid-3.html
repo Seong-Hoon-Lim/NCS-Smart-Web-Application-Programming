@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"> 
+    <title>그리드3</title>
+    <style>
+        #wrap { 
+
+                display: grid;
+                /* grid-template-columns: 1fr 1fr 1fr; */
+                /* grid-template-columns: auto auto auto; */
+                grid-template-columns: repeat(6, 1fr);
+                gap: 10px;
+                /* column-gap: 20px; */
+
+
+                padding: 10px;
+                background: #4d4d4d;
+
+              }
+
+        .item { 
+
+                padding: 20px;
+                border: 1px solid #000;
+                background: #e5fcac;
+                font-size: 30px;
+
+              }
+  
+        .header { 
+
+                grid-column-start: 1;
+                grid-column-end: 7;
+                            
+               }
+
+        .nav { 
+
+                grid-row-start: 2;
+                grid-row-end: 4;
+
+              }
+
+        .main { 
+
+                grid-column-start: 2;
+                grid-column-end: 5;
+
+              }
+
+        .side { 
+
+                grid-column-start: 5;
+                grid-column-end: 7;
+
+              }
+
+        .footer {
+
+                grid-column-start: 2;
+                grid-column-end: 7;
+                
+              }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="item header"> header</div>
+        <div class="item nav">nav</div>
+        <div class="item main">main</div>
+        <div class="item side">side</div>
+        <div class="item footer">footer</div>
+    </div>
+
+    
+</body>
+</html>
