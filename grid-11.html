@@ -2,24 +2,30 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8"> 
-    <title>그리드</title>
+    <title>그리드11</title>
     <style>
         #wrap { 
-
-                padding: 10px;
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                padding: 50px 0;
                 background: #000;
 
               }
 
         .item { 
-
-                padding: 20px;
+                width: 500px; height: 500px;
                 border: 1px solid #000;
-                background: #c7e088;
+                background: #ddfc94;
+                color: #000;
                 font-size: 30px;
 
               }
 
+        .item1 { grid-area: 2 / 1 / 4 / 3; }
+        .item2 { grid-area: 1 / 3 / 3 / 5; }
+        .item3 { grid-area: 4 / 2 / 6 / 4; }
+        .item4 { grid-area: 3 / 4 / 5 / 6; }
 
 
     </style>
@@ -30,11 +36,8 @@
         <div class="item item2">2</div>
         <div class="item item3">3</div>
         <div class="item item4">4</div>
-        <div class="item item5">5</div>
-        <div class="item item6">6</div>
-        <div class="item item7">7</div>
-        <div class="item item8">8</div>
-        <div class="item item9">9</div>
+
+
     </div>
 
     

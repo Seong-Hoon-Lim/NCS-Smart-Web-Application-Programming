@@ -1,23 +1,28 @@
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8"> 
-    <title>그리드</title>
+    <title>그리드8</title>
     <style>
         #wrap { 
 
+                display: grid;
+                /* grid-template-areas: 'myArea myArea myArea myArea myArea'; */
+                grid-template-areas: 'myArea myArea . . .' 'myArea myArea . . .'
+                        'myArea myArea . . .';
                 padding: 10px;
-                background: #000;
-
+                background: #6b6b6b;
               }
 
-        .item { 
-
+        .item {                   
                 padding: 20px;
                 border: 1px solid #000;
                 background: #c7e088;
                 font-size: 30px;
+              }
 
+        .item1 { 
+                grid-area: myArea;
               }
 
 
@@ -35,6 +40,7 @@
         <div class="item item7">7</div>
         <div class="item item8">8</div>
         <div class="item item9">9</div>
+
     </div>
 
     

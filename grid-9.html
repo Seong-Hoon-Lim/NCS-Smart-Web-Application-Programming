@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"> 
+    <title>그리드9</title>
+    <style>
+        #wrap { 
+
+                display: grid;
+                grid-template-areas: 
+                        'header header header header header header'
+                        'nav main main main side side'
+                        'nav footer footer footer footer footer';
+
+                        
+                padding: 10px;
+                background: #4d4d4d;
+
+              }
+
+        .item { 
+
+                padding: 20px;
+                border: 1px solid #000;
+                background: #e5fcac;
+                font-size: 30px;
+
+              }
+  
+        .header { 
+                grid-area: header;                    
+               }
+
+        .nav { 
+                grid-area: nav;                    
+
+              }
+
+        .main { 
+                grid-area: main;                    
+
+              }
+
+        .side { 
+                grid-area: side;                    
+
+              }
+
+        .footer {
+                grid-area: footer;                    
+                
+              }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="item header"> header</div>
+        <div class="item nav">nav</div>
+        <div class="item main">main</div>
+        <div class="item side">side</div>
+        <div class="item footer">footer</div>
+    </div>
+
+    
+</body>
+</html>
