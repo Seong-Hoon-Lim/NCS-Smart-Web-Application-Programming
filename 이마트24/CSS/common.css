@@ -1,0 +1,55 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* 초기화 */
+body, h1, h2, h3, ul { margin: 0; padding: 0; }
+ul li { list-style: none; }
+a { text-decoration: none; color: #000; }
+.hidden { position: absolute; left: -9999px; }
+
+/* 웹폰트 -noto sans kr */
+body { position: relative; min-width: 1000px; 
+        font-family: "Noto Sans KR", sans-serif; height: 300vh; }
+
+/* 헤더 */
+#headerWrap { overflow: hidden; position: absolute; top: 0; left: 0;
+             width: 100%; height: 130px; border-bottom: 1px solid #9d9d9d;
+             background: #fff; transition: 0.5s; }
+#headerWrap:hover { height: 371px; }
+#headerWrap::before { content: ""; position: absolute; top: 0; left: 0;
+                      width: 100%; height: 40px; background: #e0e0e0; }
+
+#headerWrap:hover::after { content: ""; position: absolute; top: 130px; left: 0;
+                      width: 100%; height: 240px; background: #fff;
+                      border-top: 1px solid #c6c6c6; }
+#header { position: relative; z-index: 999; width: 1000px; 
+          margin: 0 auto; padding-top: 40px; 
+          display: flex; justify-content: space-between; }
+#header h1 { width: 154px; height: 31px; padding: 30px 0 0 0px; }
+#header h1 a { display: block; height: 31px; text-indent: -5000px;
+               background: url(../images/logo.png) no-repeat;              
+        }
+
+/* lnb */
+#lnb { position: absolute; top: 0; right: 0;
+        }
+#lnb ul { height: 40px; display: flex; align-items: center; }
+#lnb ul li { 
+        /* display: inline-block;  리스트 요소 정렬1*/
+        /* float: right; line-height: 40px; 리스트 요소 정렬2*/
+        margin-right: 10px; }
+
+/* gnb */
+#gnbList { display: flex; margin-top: 30px; }
+/* #gnbList > li { float: left; } */
+#gnbList > li { margin: 0 20px; }
+#gnbList > li > a { display: block; height: 60px; font-size: 20px; }
+/* 서브메뉴 */
+.snb { padding: 20px 0; }
+.snb li { line-height: 50px; }
+.snb li a:hover { color: #f00; }
+/* 섹션 */
+#contentWrap { overflow: hidden; }
+section { width: 1500px; height: 500px; margin: 130px auto 0;
+          background: #f7acb1; }
+

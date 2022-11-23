@@ -1,0 +1,68 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* 초기화 */
+* { box-sizing: border-box; }
+body, h1, h2, ul { margin: 0; padding: 0; }
+ul li { list-style: none; }
+a { text-decoration: none; color: #000; }
+.hidden { position: absolute; width: 1px; height: 1px;
+        margin: -1px; overflow: hidden;
+        clip-path: polygon(0 0, 0 0, 0 0);}
+
+/* 웹폰트 - 고딕 */
+body { font-family: "Noto Sans KR", sans-serif; }
+
+/* 헤더 */
+#headerWrap {  position: absolute; top: 0; left: 0; 
+                width: 100%; height: 100px; box-sizing: border-box; }
+#headerWrap:hover { height: 100px; background: #fff; transition: 0.7s; }
+#header { 
+          /* position: absolute; top: 20px; left: 50%;
+          transform: translateX(-50%); */
+          width: 100vw; margin: 0 auto; padding-top: 20px 0;
+          display: flex; justify-content: space-between;
+        }
+#header .logo { width: 200px; padding-top: 25px; padding-left: 70px; }
+#header .logo a { display: block; height: 56px; 
+                text-indent: -110%; overflow: hidden;
+                background: url(../images/logo_gnb-light.png) no-repeat; }
+#headerWrap:hover .logo a { background-image: url(../images/logo_gnb-black.png); }
+/* lnb */
+#lnb { order: 1; padding-top: 30px; padding-right: 40px; }
+#lnb a { color: #fff; margin: 0 15px; }
+#demo { width: 120px; text-align: center; }
+#lnb a:nth-child(2) { float: right; position: relative; display: flex; height: 50px;
+                        font-size: 13px; vertical-align: middle; line-height: 50px;
+                        border-radius: 60px; background: #2f01d4; }
+#lnb a:nth-child(2):hover { width: 130px; height: 60px; transition: 0.7s;
+                            }
+#headerWrap:hover #lnb a { color: #000; }
+#headerWrap:hover #lnb a:hover { font-weight: bold; text-decoration: underline; 
+                                color: #2f01d4; transition: 0.7s; }
+                                
+/* gnb */
+#gnb { padding-top: 15px; }
+#gnbList {  position: relative; margin: 0 auto; display: flex; padding-top: 20px; justify-content: space-between; }
+#gnbList > li { margin: 0 20px; }
+#gnbList > li > a { color: #fff; }
+#headerWrap:hover #gnbList > li > a { color: #000; }
+#headerWrap:hover #gnbList > li > a:hover { 
+                        font-weight: bold; text-decoration: underline; 
+                        overflow: visible; color: #2f01d4; transition: 0.7s; }
+
+/* snb */
+#snb { position: absolute; margin-top: 50px; padding: 20px 0; 
+        width: 25%; text-align: center; background: #fff; }
+#snb li a {  }
+#snbList:hover { color: #bebebe; }
+#headerWrap:hover #gnbList > li > a:hover #snbList > li > a:hover { 
+        margin-top: 50px; background: #fff; color: #bebebe; }
+
+/* 섹션 */
+#sliderWrap { height: 100vh; overflow: hidden; background: #4887c1 
+            url(../images/bg_3.jpg) no-repeat center top / cover; }
+#sliderWrap > div { width: 100vw;  
+                    margin: 0 auto; padding-top: 300px; padding-left: 300px;
+                    font-size: 70px; font-weight: 500; color: #fff;}
+
