@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>반응형</title>
+    <style>
+        /* 초기화 */
+        * { box-sizing: border-box; }
+        body, h1, h2, ul { margin: 0; padding: 0; }
+        ul li { list-style: none; }
+        a { text-decoration: none; color: #000; }
+
+        /* 헤더 */
+        header { display: flex; 
+                height: 100px; width: 100%; 
+                background: #a9dbf3;}
+        header h1 { line-height: 100px; margin-left: 10px; }
+
+        nav { position: absolute; display: flex; flex-direction: column;
+            top: 3vh; right: 5vw;
+                 }
+
+        #gnb { display: flex; text-align: center;
+                }
+
+        #gnb li { margin: 0 10px; }
+
+        /* 메인 */
+        main { 
+            height: 500px; width: 100%;
+            background: #2279eb; }
+
+        h2 { color: #fff }
+
+        #maincontent { display: flex; }
+
+        .section { margin: 50px auto }
+        
+        main section {                
+                height: 400px; width: 400px;
+                border: 1px solid #fff;  }
+
+        /* 푸터 */
+        footer {                 
+                flex-direction: column; 
+                height: 150px; width: 100%;
+                background: #a9dbf3; }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>로고</h1>
+      <nav>
+        <ul id="gnb">
+          <li><a href="#">메뉴1</a></li>
+          <li><a href="#">메뉴2</a></li>
+          <li><a href="#">메뉴3</a></li>
+          <li><a href="#">메뉴4</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="maincontent">
+      <section class="section">
+        <h2>1</h2>
+      </section>
+      <section class="section">
+        <h2>2</h2>
+      </section>
+      <section class="section">
+        <h2>3</h2>
+      </section>
+    </main>
+    <footer>푸터</footer>
+  </body>
+</html>

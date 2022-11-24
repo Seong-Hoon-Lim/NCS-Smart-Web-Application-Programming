@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">  
+    <title>svg</title>
+    <style>
+        svg { width: 500px; height: 500px; border: 1px solid #000;
+              transform: rotate(-90deg); }
+        circle { fill: #f7ff87;
+                 stroke: #000;
+                 stroke-width: 2;
+                 stroke-dasharray: 1257;
+                 stroke-dashoffset: 1257;                                 
+                }                 
+        /* 원 둘레 == 3.141592 * 2 * 반지름(r) */
+        svg:hover circle { stroke-dashoffset: 0;
+                            transition: 2s; }
+
+    </style>
+</head>
+<body>
+    <svg>
+        <circle cx="250" cy="250" r="200">
+    </svg>    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">  
+    <title>svg</title>
+    <style>
+        svg { width: 500px; height: 300px; border: 1px solid #000; }   
+        path { fill: #f9ff9e;
+               stroke-width: 2;
+               stroke: #000;
+            }
+
+    </style>
+</head>
+<body>
+    <svg>
+        <!-- 삼각형 대문자(절대위치)-->
+        <!-- <path d="M250 50 100 250 400 250 Z"> -->
+        
+        <!-- 곡선 대문자(절대위치)-->
+        <!-- <path d="M50 150 Q250 450 450 150"> -->
+
+        <!-- 곡선 소문자(상대위치)-->
+        <!-- 곡선은 소문자가 조금 더 편리하다 -->
+        <path d="M50 150 q200 -150 400 0">
+    </svg>    
+</body>
+</html>

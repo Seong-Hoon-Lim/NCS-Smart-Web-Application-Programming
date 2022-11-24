@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">  
+    <title>svg</title>
+    <style>
+        svg { width: 500px; height: 500px; border: 1px solid #000; }
+        rect { x: 100; y:100;
+               fill: #edffb0;
+               stroke-width: 2;
+               stroke: #000;
+               stroke-dasharray: 1200;
+               stroke-dashoffset: 1200;
+             }
+        svg:hover rect { stroke-dashoffset: 0;
+                         transition: 1s;
+                        }
+
+    </style>
+</head>
+<body>
+    <svg>
+        <rect width="300" height="300">
+    </svg>
+    
+</body>
+</html>

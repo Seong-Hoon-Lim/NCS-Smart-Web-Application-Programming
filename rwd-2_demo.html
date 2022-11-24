@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>반응형 demo</title>
+    <style>
+      /* 초기화 */
+      * { box-sizing: border-box; }
+      body, h1, h2, ul { margin: 0; padding: 0; }
+      li { list-style: none; }
+      a { text-decoration: none; color: #000; }
+      /* 헤더 */
+      header { height: 100px; background: #c9cbc9;
+              display: flex;
+              justify-content: space-between;
+              align-items: center; }
+      header h1 { margin-left: 50px; }
+      nav ul { display: flex; margin-right: 30px; }
+      nav ul li { margin: 0 20px; }
+      nav ul li a { font-size: 20px; }
+      /* 메인 */
+      main { padding: 50px; background: #c5eb7f;
+            display: flex; }
+      section { width: 100vh; height: 400px; 
+                border: 5px solid #000; }
+      section:not(:last-child) { margin-right: 50px; }
+      /* 푸터 */
+      footer { height: 150px; background: #303030; color: #fff; font-size: 50px; }
+      
+      /* 800px 이하 */
+      @media screen and ( max-width: 800px ) {
+        main { flex-flow: wrap; }
+        section:not(:last-child) { margin-right: 0; margin-bottom: 50px; }
+        /* section {  } */
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>로고</h1>
+      <nav>
+        <ul>
+          <li><a href="#">메뉴1</a></li>
+          <li><a href="#">메뉴2</a></li>
+          <li><a href="#">메뉴3</a></li>
+          <li><a href="#">메뉴4</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>1</h2>
+      </section>
+      <section>
+        <h2>2</h2>
+      </section>
+      <section>
+        <h2>3</h2>
+      </section>
+    </main>
+    <footer>footer</footer>
+  </body>
+</html>
