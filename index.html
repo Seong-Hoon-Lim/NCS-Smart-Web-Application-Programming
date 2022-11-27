@@ -1,65 +1,65 @@
 <!DOCTYPE html>
-<html lang="ko" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>반응형 demo</title>
-    <meta name="viewport" content="width=device-width">
-    <style>
-      /* 초기화 */
-      * { box-sizing: border-box; }
-      body, h1, h2, ul { margin: 0; padding: 0; }
-      li { list-style: none; }
-      a { text-decoration: none; color: #000; }
-      /* 헤더 */
-      header { height: 100px; background: #c9cbc9;
-              display: flex;
-              justify-content: space-between;
-              align-items: center; }
-      header h1 { margin-left: 50px; }
-      nav ul { display: flex; margin-right: 30px; }
-      nav ul li { margin: 0 20px; }
-      nav ul li a { font-size: 20px; }
-      /* 메인 */
-      main { padding: 50px; background: #c5eb7f;
-            display: flex; }
-      section { width: 100vh; height: 400px; 
-                border: 5px solid #000; }
-      section:not(:last-child) { margin-right: 50px; }
-      /* 푸터 */
-      footer { height: 150px; background: #303030; color: #fff; font-size: 50px; }
-      
-      /* 800px 이하 */
-      @media screen and ( max-width: 800px ) {
-        main { flex-flow: wrap; }
-        section:not(:last-child) { margin-right: 0; margin-bottom: 50px; }
-        /* section {  } */
-      }
-
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>로고</h1>
-      <nav>
-        <ul>
-          <li><a href="#">메뉴1</a></li>
-          <li><a href="#">메뉴2</a></li>
-          <li><a href="#">메뉴3</a></li>
-          <li><a href="#">메뉴4</a></li>
-        </ul>
-      </nav>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신세계 건설</title>
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <header id="header">        
+        <h1 class="logo">
+            <a href="#">
+                <span>SHINSEGAE E&C</span>
+            </a>
+        </h1>
+        <nav id="lnb">
+            <h2 class="hidden">로그인 관련</h2>
+            <ul id="lnbList">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="viewGnb"><span class="hidden">Menu 보기</span></a>
+        <nav id="gnb">
+            <h2 class="hidden">주요 메뉴</h2>
+            <ul id="gnbList">
+                <li><a href="#">리스트1</a></li>
+                <li><a href="#">리스트2</a></li>
+                <li><a href="#">리스트3</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-      <section>
-        <h2>1</h2>
-      </section>
-      <section>
-        <h2>2</h2>
-      </section>
-      <section>
-        <h2>3</h2>
-      </section>
+        <section>
+            <div id="mainFrame">
+                <h2 class="hidden">메인프레임</h2>
+                <h2 class="main">고객의<br> 행복을 위하여</h2>
+                <p class="main2">주거, 쇼핑 레저의 다양한 건축으로<br>
+                   풍요로운 삶의 행복을 전달 합니다.</p>
+            </div>
+        </section>
+        <section>
+            <div id="section">
+                <section id="content"><h3>컨텐츠1</h3></section>
+                <section id="content"><h3>컨텐츠2</h3></section>
+                <section id="content"><h3>컨텐츠3</h3></section>
+                <section id="content"><h3>컨텐츠4</h3></section>
+            </div>
+        </section>
     </main>
-    <footer>footer</footer>
-  </body>
+    <footer>
+        <address>footer</address>
+    </footer>
+    <script>
+        const gnbBtn = document.querySelector('.viewGnb');
+        const gnb = document.getElementById("gnb")
+        gnbBtn.addEventListener("click", ()=> {
+          gnb.style.left = "0px";
+        })
+        gnb.addEventListener('mouseleave', ()=>{
+          gnb.style.left = "-200px";
+        })  
+      </script>    
+</body>
 </html>
