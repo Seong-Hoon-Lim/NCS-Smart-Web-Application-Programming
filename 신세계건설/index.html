@@ -8,7 +8,11 @@
 </head>
 <body>
     <header id="header">        
-        <h1 class=""><a href="#">로고</a></h1>
+        <h1 class="logo">
+            <a href="#">
+                <span>SHINSEGAE E&C</span>
+            </a>
+        </h1>
         <nav id="lnb">
             <h2 class="hidden">로그인 관련</h2>
             <ul id="lnbList">
@@ -16,6 +20,7 @@
                 <li><a href="#">회원가입</a></li>
             </ul>
         </nav>
+        <a href="#" class="viewGnb"><span class="hidden">Menu 보기</span></a>
         <nav id="gnb">
             <h2 class="hidden">주요 메뉴</h2>
             <ul id="gnbList">
@@ -45,6 +50,16 @@
     </main>
     <footer>
         <address>footer</address>
-    </footer>    
+    </footer>
+    <script>
+        const gnbBtn = document.querySelector('.viewGnb');
+        const gnb = document.getElementById("gnb")
+        gnbBtn.addEventListener("click", ()=> {
+          gnb.style.left = "0px";
+        })
+        gnb.addEventListener('mouseleave', ()=>{
+          gnb.style.left = "-200px";
+        })  
+      </script>    
 </body>
 </html>

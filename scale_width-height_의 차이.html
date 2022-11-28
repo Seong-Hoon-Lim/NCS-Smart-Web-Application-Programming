@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scale과 width의 차이</title>
+    <style>
+        div { width: 300px; height: 200px;
+              border: 5px solid #000;
+              transition: 1s; overflow: hidden; }
+        div img { transition: 1s; width: 300px;}
+        /* div:hover img { width: 450px; } */
+        /* div:hover img { transform: scale(1.5); } */
+        div:hover { transform: scale(1.5); }
+
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./images/cat.jpg" alt="냥이">
+    </div>
+</body>
+</html>

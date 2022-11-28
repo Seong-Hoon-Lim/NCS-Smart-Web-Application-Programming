@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+        body { width: 200px; margin: 300px auto; }
+
+        section { position: relative; width: 300px; height: 300px;
+                  transform-style: preserve-3d;
+                  animation-name: ani;
+                  animation-duration: 5s;
+                  animation-direction: alternate;
+                  animation-iteration-count: infinite;
+                  animation-timing-function: linear;
+                  backface-visibility: visible;
+                }
+
+        div { width: 300px; height: 300px; 
+              position: absolute; left: 0; top: 0;
+              font-size: 50px; color: #fff;
+              opacity: 0.5;
+        }
+
+        /* 변환함수 적용하기 */
+        div:nth-child(1) { background: red; }
+        div:nth-child(2) { background: green; transform: rotateY(45deg);
+                            }
+        div:nth-child(3) { background: blue; transform: rotateY(90deg);
+                            }
+        div:nth-child(4) { background: yellow; transform: rotateY(135deg);
+                            }
+
+        @keyframes ani { 
+            from { transform: rotateX(30deg) rotateY(0deg) rotateZ(0deg); }
+            to { transform: rotateX(30deg) rotateY(360deg) rotateZ(0deg); }
+         }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+</html>
