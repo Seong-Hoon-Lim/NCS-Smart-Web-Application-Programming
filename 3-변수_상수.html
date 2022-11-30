@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수와 상수</title>
+    <script>
+        // 변수를 var로 선언할 때 문제
+        // console.log(test1); //호이스팅 - 변수가 선언되지 않았는데 오류가 없음
+        // var test1 = "abc";
+        // console.log(test1);
+        // var test1 = "aaa";
+        // console.log(test1);
+
+        // 변수를 let 으로 선언
+        // console.log(test2);  //변수선언 전에 출력불가
+        let test2 = "abc";
+        console.log(test2);
+        // let test2 = "aaa";   //중복선언 불가
+        console.log(test2);
+        test2 = "aaa";
+
+        // 변수를 const 로 선언
+        // console.log(test3);  //변수선언 전에 출력불가
+        const test3 = "abc";
+        console.log(test3);
+        // const test3 = "aaa";    //중복선언 불가
+        test3 = "aaa";  //값 변경불가 == 상수
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본문법</title>
+</head>
+<body>
+    <script>
+        document.write("겹따옴표와 홑따옴표 모두 가능<br>");
+        document.write('겹따옴표와 홑따옴표 모두 가능<br>');
+        document.write("'겹따옴표'와 '홑따옴표' 모두 가능<br>");
+        document.write("\"겹따옴표\"와 홑따옴표 모두 가능<br>");
+        document.write('\'겹따옴표와\' 홑따옴표 모두 가능<br>');
+        document.write(`"겹따옴표"와 '홑따옴표' 모두 가능<br>`);
+        
+        // DOCUMENT.WRITE(`"겹따옴표"와 '홑따옴표' 모두 가능<br>`); 대소문자 구분
+        // console.log("test1") console.log("test2") 줄바꿈 없을 경우 ; 없으면 오류
+        // 문장구분은 세미콜론(;)으로 마무리한다
+        
+        // var function = "변수선언"; 
+        // 예약어는 변수명으로 사용할 수 없다
+
+        var name = prompt("이름입력");
+        // console.log(name + "님 안녕하세요!"); 고전문법
+        console.log(`${name}님 안녕하세요!`); //요즘문법
+    </script>
+    
+</body>
+</html>

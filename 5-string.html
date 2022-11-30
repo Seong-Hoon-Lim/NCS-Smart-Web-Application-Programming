@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string 데이터타입</title>
+    <script>
+        let str1 = "Hello";
+        let str2 = "World!";
+        console.log(str1, str2);
+        console.log(str1);
+        console.log(str2);
+        // let str3 = str1.concat(', ').concat(str2);
+        // let str3 = str1 + ', ' + str2;
+        let str3 = `${str1}, ${str2}`;
+        console.log(str3);
+
+        let alpha = "ABCDEabcde";
+        console.log(alpha.length);
+        console.log(alpha.charAt(0));    //A
+        console.log(alpha.charAt(9));    //e
+        console.log(alpha[0]);  //A
+        console.log(alpha[9]);  //e
+
+        let str4 = "abcdefghijkabcdefghikacbcedfghikf";
+        // str4 에서 뒤에서 5번째 문자열을 반환하세요
+        document.write(`str4 에서 뒤에서 5번째 문자열을 반환하세요<br>`)
+        let answer = str4.charAt(str4.length - 5);
+        // let answer = str4[str4.length - 5];
+        document.write(`뒤에서 5번째 문자열은 <b>${answer}<b>입니다`)
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

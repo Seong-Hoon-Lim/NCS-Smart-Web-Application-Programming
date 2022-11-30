@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number 데이터타입</title>
+    <script>
+        let a = 100;
+        let b = 3.14;
+        let c = 1e-3;
+        console.log(a, typeof(a));
+        console.log(b, typeof(b));
+        console.log(c, typeof(c));
+        console.log(typeof(1), typeof('1'));
+
+        let num1 = 10;
+        let num2 = 20;
+        let num3 = num1 + num2;
+        console.log(num3);
+
+        // prompt에서 입력받은 값은 모두 데이터타입이 string(문자)
+        let height1 = prompt("키를 입력하세요");
+        console.log(height1, typeof(height1));
+        let height2 = prompt("몸무게를 입력하세요");
+        console.log(height2, typeof(height2));
+
+        // prompt에서 숫자값을 입력받았을 때 처리
+        // document.write(`키와 몸무게의 합은 ${Number(height1)+Number(height2)}입니다`)
+        // document.write(`키와 몸무게의 합은 ${height1-height2}입니다`)
+
+        // 숫자뒤에 문자가 붙은 값을 받아서
+        // 문자는 버리고 숫자만 각각 정수와 실수로 변화
+        document.write(`키와 몸무게의 합은 ${parseInt(height1)+parseInt(height2)}입니다`)
+        document.write(`키와 몸무게의 합은 ${parseFloat(height1)+parseFloat(height2)}입니다`)
+
+        let str = "3.141592는 Pi의 근사값입니다"
+        // console.log(Number(str));    //NaN (Not a Number)
+        console.log(parseInt(str)); //3
+        console.log(parseInt(str)); //3.141592
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
