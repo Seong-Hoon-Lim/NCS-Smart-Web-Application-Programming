@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색 변경</title>
+</head>
+<body>
+    <button>색상값 입력</button>
+    <script>
+        // 버튼을 클릭시 prompt로 색상값을 입력받아
+        // 배경색을 바꾸는 함수를 완성하세요
+        const btn = document.querySelector("button");
+        let colorChange = () => {
+            // prompt로 입력된 값 변수에 저장
+            let colorName = prompt("색상 코드를 입력하세요");
+            // body에 배경값으로 위 변수를 적용
+            document.body.style.backgroundColor = colorName;
+        }
+        console.log(colorChange);
+        btn.addEventListener("click", colorChange);
+        // btn.addEventListener("click", ()=>{
+        //     colorChange();
+        // })
+
+
+
+
+    </script>
+</body>
+</html>

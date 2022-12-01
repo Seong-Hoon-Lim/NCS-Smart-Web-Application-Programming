@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다양한 함수표현식</title>
+</head>
+<script>
+    // 선언적함수, 명명적함수
+    function fnc1(name) {
+        console.log(name);
+    }
+    fnc1("홍길동");
+
+    // 익명함수, 무명함수, 리터럴함수
+    var fnc2 = function(name) {
+        console.log(name);
+    }
+    fnc2("이순신");
+
+    // 즉시실행함수
+    (function (name) {
+        console.log(name);
+    })("신사임당");
+
+    // 화살표함수
+    let fnc3 = (name)=>{
+        console.log(name);
+    }
+    fnc3("김구");
+
+</script>
+<style>
+    div { width: 200px; height: 200px;
+            background: #91b3d2; }
+
+</style>
+<body>
+    <div><a href="#">aaaa</a></div>
+    <script>
+        const div = document.querySelector("div");
+        console.log(div);
+
+        // div.addEventListener("click", function(){
+        //     this.style.background = "#e0ff3f";
+        //     console.log(this);
+        // })
+
+        div.addEventListener("click", (e)=> {
+            // this.style.background = "#e0443f";  //오류발생
+            // event.currentTarget.style.background = "#e0443f";
+            e.currentTarget.style.background = "#e0443f";
+            console.log(this);  //최상위 개체인 window를 가리킴
+            console.log(e.currentTarget);   //div가리킴
+            console.log(e.target);  //div가리킴
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배열을 활용한 랜덤색상변경</title>
+  </head>
+  <body>
+    <p>배경색상과 폰트색상을 다음의 3가지의 경우로 맞추어 변경하세오</p>
+    <ul>
+      <li>pink-black</li>
+      <li>blue-white</li>
+      <li>black-yellow</li>
+    </ul>
+    <script>
+      let color1 = ['pink','blue','black'];
+      let color2 = ['black','white','yellow'];
+
+      // console.log(color1[2])
+      // console.log(color2[2])
+      
+      let n = Math.floor(Math.random()*3);
+      console.log(n)
+      document.body.style.backgroundColor = color1[n];
+      document.body.style.color = color2[n];
+
+    </script>
+  </body>
+</html>
