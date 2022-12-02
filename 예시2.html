@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤러리 효과</title>
+    <style>
+      body { text-align: center; }
+      figure { height: 300px; }
+      button { font-size: 30px; }
+
+    </style>
+</head>
+<body>
+  <figure>
+    <img src="images/pic_1.jpg" alt="" width="200">
+  </figure>
+  <button>이전</button>
+  <button>다음</button>
+
+<script>
+  const imgTag = document.querySelector("img");
+  const btn = document.querySelectorAll("button");
+  let num = 1;
+  let gallery = ()=> {
+    if (num > 9) {      
+      num++;
+    }
+    imgTag.setAttribute("src",`images/pic_${num}.jpg`);
+  } 
+
+  // let gallery = ()=> {
+  //   if (num > 9) {      
+  //     num++;
+  //     if (num <= 9) {
+  //       num--;   
+  //     }
+  //     imgTag.setAttribute("src",`images/pic_${num}.jpg`);
+  //   }
+  // } 
+
+  btn[1].addEventListener("click", ()=> {
+    gallery();
+  })
+
+</script>    
+</body>
+</html>

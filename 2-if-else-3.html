@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if-esle 조건문</title>
+    <script>
+        // 100이상 점수를 잘못 입력했습니다
+        // 90 - 100 아주 잘했어요
+        // 80점대 잘했어요
+        // 70점대 조금 더 노력하면 잘할 수 있어요
+        // 60점대 좀 더 노력하세요
+        // 60점대 미만 많이 노력하세요
+
+        let score;
+
+        let grade = ()=> {
+            score = prompt("점수를 입력하세요 (숫자만 입력하세요)");
+            if (score > 100) {
+                alert("점수를 잘못 입력했습니다!");
+            }
+            else if (score >= 90) {
+                alert("아주 잘 했어요");
+            }  
+            else if (score >= 80) {
+                alert("잘 했어요");                
+            }
+            else if (score >= 70) {
+                alert("조금 더 노력하면 잘할 수 있어요");             
+            }
+            else if (score >= 60) {
+                alert("좀 더 노력하세요");
+            }
+            else {
+                alert("많이 노력하세요");
+            }
+        }
+        grade();
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

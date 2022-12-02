@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이중 if문</title>
+    <script>
+        // let gender = prompt("성별을 입력하세요, 남자면 M 여자면 F");
+        // let age = prompt("나이를 입력하세요, 숫자만 입력");
+
+        // if (gender == 'M') {
+        //     if (age >= 20) {
+        //         result = "남자 성인";
+        //     }
+        //     else {
+        //         result = "남자 미성년";
+        //     }
+        // }
+
+        // else if (gender == 'F') {
+        //     if (age >= 20) {
+        //         result = "여자 성인";
+        //     }
+        //     else {
+        //         result = "여자 미성년";
+        //     }
+        // }
+
+        // else {
+        //     result = "잘못된 입력"
+
+        // }
+
+        // document.write(`${result}입니다`)
+
+        // 간소화
+
+        let gender = prompt("성별을 입력하세요, 남자면 M 여자면 F");
+        let age = ()=> {
+            let ageInput = prompt("나이를 입력하세요, 숫자만 입력")
+            if (ageInput >= 20) {
+                result = `${gender} 성인`;
+            }
+            else {
+                result = `${gender} 미성년자`;
+            }
+        }
+
+        if ( gender == 'M' ) {
+            gender = "남자";
+            age();
+
+        }
+        else if (gender == 'F') {
+            gender = "여자";
+            age();
+
+        }
+        else {
+            result = "잘못된 입력"
+        }
+        document.write(`${result}입니다`)
+
+        
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>
