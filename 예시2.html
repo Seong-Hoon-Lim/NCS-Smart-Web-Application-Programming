@@ -22,11 +22,17 @@
   const imgTag = document.querySelector("img");
   const btn = document.querySelectorAll("button");
   let num = 1;
-  let gallery = ()=> {
-    if (num > 9) {      
-      num++;
-    }
-    imgTag.setAttribute("src",`images/pic_${num}.jpg`);
+  let gallery = (state)=> {
+    if (state) {
+          if (num >= 9) return;
+          num ++;
+        }
+        else {
+          if (num <= 1) return;
+          num --;
+        } 
+        imgTag.setAttribute("src",`images/pic_${num}.jpg`);    
+        console.log(num);     
   } 
 
   // let gallery = ()=> {
@@ -39,8 +45,12 @@
   //   }
   // } 
 
+  btn[0].addEventListener("click", ()=> {
+    gallery(false);  
+  })
+
   btn[1].addEventListener("click", ()=> {
-    gallery();
+    gallery(true);
   })
 
 </script>    
