@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number 객체</title>
+    <script>
+        document.write(Number.MAX_VALUE, `<br>`);
+        // 1.7976931348623157e+308
+        document.write(Number.MIN_VALUE, `<br>`);
+        // 5e-324
+        document.write(Number.NaN, `<br>`);
+        // NaN
+        document.write(Number.POSITIVE_INFINITY, `<br>`);
+        // Infinity
+        document.write(Number.NEGATIVE_INFINITY, `<br>`);
+        // -Infinity
+
+        
+        let num1 = 700000;
+        let num2 = 3.456789;
+
+        // 지수 표기법 - 소수점 n자리 문자형 데이터로 반환
+        document.write(num1.toExponential(1), `<br>`);  //7.0e+5
+        // 소수점 n자리까지 반올림 문자형 데이터로 반환
+        document.write(num2.toFixed(2), `<br>`);  //3.46
+        // 유효숫자 n의 개수만큼 반올림 문자형 데이터로 반환
+        document.write(num2.toPrecision(2), `<br>`);  //3.5
+
+        document.write(`------------<br>`);
+
+        let num3 = "30.5px";
+        document.write(parseFloat(num3),`<br>`);    //30.5
+        document.write(parseInt(num3),`<br>`);  //30
+        
+        let num4 = 40;
+        document.write(num4.valueOf()); //40
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

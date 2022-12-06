@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string 객체</title>
+    <script>
+        // 내장객체로는 date, string, math, number ... 등이 있다.
+        let string = "Hello, Thank you good luck to you";
+        document.write(string.length, `<br>`);  //33
+        document.write(string.charAt(17), `<br>`);  //g
+        document.write(string.indexOf("you"), `<br>`);  //13
+        document.write(string.indexOf("you", 20), `<br>`);  //30
+        document.write(string.indexOf("your", 20), `<br>`);  //-1
+        document.write(string.lastIndexOf("you"), `<br>`);  //30
+        document.write(string.lastIndexOf("you", 20), `<br>`);  //13
+
+        document.write(string.includes("you"), `<br>`);  //true
+        document.write(string.includes("like"), `<br>`);  //false
+
+        // search는 정규식 사용가능
+        document.write(string.search("you"), `<br>`);  //13
+        document.write(string.search("your"), `<br>`);  //-1
+
+        document.write(string.match("you"), `<br>`);  //you
+        document.write(string.match("your"), `<br>`);  //null
+
+        // let string = "Hello, Thank you good luck to you";
+        document.write(string.substr(7, 5),`<br>`); //Thank
+        document.write(string.substring(7, 13),`<br>`); //Thank
+
+        document.write(string.replace("you", "me"),`<br>`);
+        // Hello, Thank me good luck to you
+        document.write(string.replaceAll("you", "me"),`<br>`);
+        // Hello, Thank me good luck to me
+        document.write(string.replaceAll(/you/g, "me"),`<br>`);
+        // Hello, Thank me good luck to me
+
+        document.write(string.toUpperCase(),`<br>`);
+        // HELLO, THANK YOU GOOD LUCK TO YOU
+        document.write(string.toLowerCase(),`<br>`);
+        // hello, thank you good luck to you
+
+
+
+
+
+        
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

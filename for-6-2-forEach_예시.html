@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach 예시</title>
+    <style>
+        div { width: 100px; height: 100px;
+              border: 1px solid #000; }
+        
+    </style>
+</head>
+<body>
+    <button>red</button>
+    <button>green</button>
+    <button>blue</button>
+    <div></div>
+    <script>
+        const btn = document.querySelectorAll("button");
+        const div = document.querySelector("div");
+        
+        // btn[0].addEventListener("click", ()=> {
+        //     div.style.backgroundColor = btn[0].innerText;
+        // })
+        // btn[1].addEventListener("click", ()=> {
+        //     div.style.backgroundColor = btn[1].innerText;
+        // })
+        // btn[2].addEventListener("click", ()=> {
+        //     div.style.backgroundColor = btn[2].innerText;
+        // })
+        
+        // 일반 for문
+        // for (let i=0; i<btn.length; i++) {
+        //     btn[i].addEventListener("click", ()=> {
+        //         div.style.backgroundColor = btn[i].innerText;
+        //     })
+        // }
+
+        // for ~ in (Uncaught TypeError 오류발생, 객체요소에 적용하는 for문
+        //           일반 명령문에서는 오류출력)
+        // for (let i in btn) {
+        //     btn[i].addEventListener("click", ()=> {
+        //         div.style.backgroundColor = btn[i].innerText;
+        //     })
+        // }
+
+        // 객체의 요소 중 각 키의 값만 출력하는 반복문으로 사용됨
+        let obj = { name: "이순신", age: "40" };
+        for (let i in obj) {
+            console.log(obj[i]);
+        }
+
+        // for ~ of
+        // for (let i of btn) {
+        //     i.addEventListener("click", ()=> {
+        //         div.style.backgroundColor = i.innerText;
+        //     })
+        // }
+
+        // for Each
+        btn.forEach((btns, i)=> {
+            btns.addEventListener("click", ()=> {
+                div.style.backgroundColor = btns.innerText;
+            })
+        })
+        
+
+
+
+    </script>
+</body>
+</html>

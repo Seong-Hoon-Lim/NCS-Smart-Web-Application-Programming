@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch / case 문</title>
+    <script>
+    //     switch ~ case문
+	//     switch (변수명) {
+	//   case A: 명령문; break;
+	//   case B: 명령문; break;
+	//   case C: 명령문; break;
+	//   default: 명령문;	//모든 case명령문에 해당되지 않으면 실행(생략도 가능)
+	// }
+    
+    </script>
+</head>
+<body>
+    <h1>좋아하는 과일이름은?</h1>
+    <script>
+        let txt = document.querySelector("h1");
+        let fruit = prompt("좋아하는 과일을 입력하세요");
+        switch (fruit) {
+            case "사과":
+                txt.innerText = `"${fruit}" 과일을 좋아합니다`;
+                break;
+            case "수박":
+                txt.innerText = `"${fruit}" 과일을 좋아합니다`;
+                break;
+            case "참외":
+                txt.innerText = `"${fruit}" 과일을 좋아합니다`;
+                break;
+            default: 
+                txt.innerText = "입력하신 과일이 없습니다";
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

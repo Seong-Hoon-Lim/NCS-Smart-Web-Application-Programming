@@ -24,26 +24,16 @@
   let num = 1;
   let gallery = (state)=> {
     if (state) {
-          if (num >= 9) return;
+          if (num == 9) num = 0; //한방향으로 순환
           num ++;
         }
         else {
-          if (num <= 1) return;
+          if (num == 1) num = 10; //역방향으로 순환
           num --;
         } 
         imgTag.setAttribute("src",`images/pic_${num}.jpg`);    
         console.log(num);     
   } 
-
-  // let gallery = ()=> {
-  //   if (num > 9) {      
-  //     num++;
-  //     if (num <= 9) {
-  //       num--;   
-  //     }
-  //     imgTag.setAttribute("src",`images/pic_${num}.jpg`);
-  //   }
-  // } 
 
   btn[0].addEventListener("click", ()=> {
     gallery(false);  

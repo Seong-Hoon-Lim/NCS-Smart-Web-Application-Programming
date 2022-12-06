@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열을 활용한 for문</title>
+    <script>
+        let food = ["짜장면", "짬뽕", "탕수육", "볶음밥", "칠리새우"];
+        // document.write(`1등 ${food[0]}<br>`);
+        // document.write(`2등 ${food[1]}<br>`);
+        // document.write(`3등 ${food[2]}<br>`);
+        // document.write(`4등 ${food[3]}<br>`);
+
+        for (let i=0; i<food.length; i++) {
+        console.log(`${i+1}등 ${food[i]}<br>`);
+            
+        }
+
+    </script>
+    <style>
+        div {width: 100px; height: 100px;
+            border: 1px solid #000;}
+
+    </style>
+</head>
+<body>
+    <button>색상변경</button>
+    <div></div>    
+    <div></div>    
+    <div></div>
+
+    <script>
+        const btn = document.querySelector("button");
+        console.log(btn);
+        const div = document.querySelectorAll("div");
+        console.log(div);
+
+        btn.addEventListener("click", ()=> {
+            
+            for (let i=0; i < div.length; i++) {
+                div[i].style.backgroundColor="#4caeed";
+            }     
+        })
+
+        for (let i=0; i<div.length; i++) {
+            div[i].addEventListener("click", ()=> {                
+                div[i].style.backgroundColor = "#911bf2";
+                // event.currentTarget.style.backgroundColor = "#911bf2";
+            })
+        }
+
+    </script>   
+</body>
+</html>

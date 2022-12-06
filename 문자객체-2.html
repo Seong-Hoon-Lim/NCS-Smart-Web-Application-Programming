@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string 객체</title>
+    <script>
+        // 영어 소문자로 이름을 입력받아서 대문자로 출력하세요
+        // let userName = prompt("영어 소문자로 이름을 입력하세요")
+        // document.write(userName.toUpperCase());
+
+        // 휴대폰 번호를 입력받아서 출력
+        // 마지막 4자리는 **** 처리
+        // let phoneNum = prompt("휴대폰 번호를 입력하세요");
+        // let result = phoneNum.substring(0, phoneNum.length-4)+"****";
+        // // let result2 = phoneNum.replaceAll('-', '');
+        // let result2 = phoneNum.replaceAll(/-/g, '');
+        // document.write(result,`<br>`);
+        // document.write(result2);
+
+        // 정규 표현식 활용 (/ / 안에 형식 입력)
+        // \d 는 숫자를 의미 {숫자 문자 갯수}
+        const text = "안녕하세요 제 번호는 010-1111-2222 입니다"
+        const telNum = text.match(/\d{3}-\d{4}-\d{4}/);
+        console.log(telNum);
+        document.write(telNum.join()+`<br>`, typeof(telNum.join()));
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
