@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <script>
+
+       
+
+    </script>
+
+</head>
+<body>
+    <h1>0</h1>
+    <button>멈춤</button>
+    <button>재생</button>
+
+    <script>
+        let i = 0;
+        // setTimeout(()=>{
+        //     console.log(++i);
+        // }, 2000);
+
+        // setInterval(()=>{
+        //     console.log(++i);
+        // }, 2000);
+
+        const heading = document.querySelector("h1");
+        const btn = document.querySelectorAll("button");
+
+        let n = 0;
+        let timer = setInterval(function() {
+            heading.innerHTML = ++n;
+        } , 1000)
+
+        // clearInterval(변수명) - setInterval 중지
+        btn[0].addEventListener("click", ()=> {
+            clearInterval(timer);
+        })
+        btn[1].addEventListener("click", ()=> {
+            timer = setInterval(function() {
+                heading.innerHTML = ++n;
+                } , 1000)
+        })
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 객체 - 시간</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        
+        let heading = document.querySelector("h1");
+
+        let clock = ()=> {
+
+        let toDay = new Date();
+        let hour = toDay.getHours();    //시간
+        let minute = toDay.getMinutes();    //분
+        let second = toDay.getSeconds();    //초
+
+        heading.innerHTML = `${hour} : ${minute} : ${second}`;
+
+        }
+        clock();
+        setInterval(clock, 1);
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

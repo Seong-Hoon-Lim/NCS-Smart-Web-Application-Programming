@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날개짓하는 나비</title>
+    <style>
+        body { height: 100vh;
+               margin: 0;
+               background: #000; 
+               display: flex;
+               justify-content: center;
+               align-items: center;}
+        
+
+    </style>
+
+</head>
+<body>
+    <img src="./nabi/nabi_1.png" alt="나비" width="200">
+
+
+</body>
+<script>
+    const nabi = document.querySelector("img");
+    // 초기값
+    let num = 1;
+    // src 경로값의 1이 1~6까지 1씩 증가 후 다시 1로
+    let wing = ()=> {
+            num++;
+            if ( num > 6 ) num = 1;
+            nabi.setAttribute("src",`./nabi/nabi_${num}.png`);
+            // if ( num == 6 ) num = 0;
+        }
+
+        setInterval(wing, 100)
+
+
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 객체</title>
+    <script>
+        let today = new Date();
+        console.log(today);
+        // console.log(today.valueOf());
+        // let month = today.getYear();    //삭제
+        let year = today.getFullYear();
+        let month = today.getMonth();   //0~11(0이 1월)
+        let day = today.getDay();   //0~6(0이 일요일)
+        let date = today.getDate();
+        console.log(year);        
+        console.log(month);
+        console.log(day);
+        console.log(date);
+
+        let pDay = new Date(2022, 4, 31);   //2002년 5월 31일
+        console.log(pDay);
+        console.log(`2022년 월드컵이 개최된 달은 ${pDay.getMonth()+1}월 입니다`);
+
+        // 태어난 일로부터 총 일수 계산
+        let birthday = new Date(1992, 10, 8);
+        console.log(birthday);
+        console.log(today - birthday);
+        let interval = Math.floor((today-birthday) / 86400000);
+        document.write(`태어난 후로 ${interval}일이 지났습니다 <br>`);
+
+        // 올해 마지막 날까지 남은 날짜 계산 (d-day)
+        let lastDay = new Date(2022, 11 , 31);
+        let dDay = Math.ceil((lastDay-today) / 86400000);
+        document.write(`올해가 ${dDay}일이 남았어요`);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

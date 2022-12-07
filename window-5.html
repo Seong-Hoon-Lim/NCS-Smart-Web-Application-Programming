@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        /* 초기화 */
+        body, ul { margin: 0; padding: 0; }
+        li { list-style: none; }
+
+        /* 슬라이더 */
+        section { overflow: hidden; }
+        ul { width: 400%; display: flex; transition: 1s; }
+        ul li { width: 100%; height: 500px; 
+                    font-size: 100px; color: #fff; }
+        ul li.slider1 { background: #1dbb62; }
+        ul li.slider2 { background: #2e1dbb; }
+        ul li.slider3 { background: #e87e49; }
+        ul li.slider4 { background: #5c91cf; }
+
+
+    </style>
+
+</head>
+<body>
+    <section>
+        <ul>
+            <li class="slider1">1</li>
+            <li class="slider2">2</li>
+            <li class="slider3">3</li>
+            <li class="slider4">4</li>
+        </ul>
+    </section>
+
+</body>
+<script>
+    const sliderWrap = document.querySelector("ul");
+    // sliderWrap.style.marginLeft = `-100%`;
+    // sliderWrap.style.transform = `translateX(-25%)`;
+    let num = 0;
+    let slider =()=> {
+        if ( num >= 300 ) num = -100;
+        num += 100;
+        sliderWrap.style.marginLeft = `-${num}%`;
+
+    }
+    setInterval(slider, 2000);
+
+
+</script>
+</html>
