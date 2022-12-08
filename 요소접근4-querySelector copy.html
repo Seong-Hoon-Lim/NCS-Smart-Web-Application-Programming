@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li class="active">CSS</li>
+        <li class="active">JavaScript</li>
+    </ul>
+    
+    <script>
+        const ulTag = document.querySelector("ul");
+        console.log(ulTag);
+
+        // const lis = document.querySelector("li");    //첫번째 요소만 값을 반환
+        const lis = document.querySelectorAll("li");
+        console.log(lis);
+        // foreach
+        lis.forEach((li) => {
+            li.style.color = "red";
+        });
+
+        const act = document.querySelectorAll(".active");
+        act[0].style.color = "#00f";
+
+    
+    </script>
+</body>
+</html>

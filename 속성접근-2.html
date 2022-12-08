@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성제어</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1 id="title">마우스 아웃</h1>
+    <img src="./btn_out.gif" class="btn" alt="버튼">
+    <p class="path">경로출력</p>
+
+    <script>
+        const title = document.getElementById("title");
+        const btn = document.querySelector(".btn");
+        const path = document.querySelector(".path");
+
+        // mouseenter
+        btn.addEventListener("mouseenter",()=>{
+            title.innerText = "마우스인";
+            btn.src = "./btn_over.gif";
+            path.innerText = btn.getAttribute("src");
+        })
+
+        // mouseleave
+        btn.addEventListener("mouseleave",()=>{
+            title.innerText = "마우스 아웃";
+            btn.src = "./btn_out.gif";
+            path.innerText = btn.getAttribute("src");
+        })
+        
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모/자식요소에 접근</title>
+</head>
+<body>
+    <h1>선호하는 음식</h1>
+    <div id="food1">
+        <h2>한식</h2>
+        <ol>
+            <li>김치</li>
+            <li>비빔밥</li>
+        </ol>
+    </div>
+    <div id="food2">
+        <h2>양식</h2>
+        <ol>
+            <li>피자</li>
+            <li>스테이크</li>
+        </ol>
+    </div>
+        
+    <script>
+        const food1 = document.getElementById('food1');
+        console.log(food1);
+  
+        // childNodes와 firstChild는 주석과 텍스트를 자식요소로 간주
+        // const heading2 = food1.childNodes[0];
+        // const heading2 = food1.firstChild;
+        // const heading2 = food1.lastChild;
+  
+        const heading2 = food1.children[0];
+        // const heading2 = food1.firstElementChild;
+        // const heading2 = food1.lastElementChild;
+        heading2.style.color = "#f00";
+        console.log(heading2)
+  
+        // 부모요소에 접근하기
+        const food2_heading = document.querySelector("#food2 h2");
+        console.log(food2_heading);
+        // food2_heading.parentElement.style.border = "5px solid #f00";
+        food2_heading.parentNode.style.border = "5px solid #f00";
+  
+        // 부모요소
+        parentNode
+        parentElement
+  
+        // 자식요소
+        // childNodes[] // 주석과 텍스트를 자식요소로 간주
+        firstChild
+        lastChild
+  
+        // children[]
+        firstElementChild // 태그만 반환
+        lastElementChild // 태그만 반환
+      </script>
+</body>
+</html>

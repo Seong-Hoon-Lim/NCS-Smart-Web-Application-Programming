@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그명으로 요소에 접근</title>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    
+    <script>
+        const ulTag = document.getElementsByTagName("ul");
+        console.log(ulTag);
+        ulTag[0].style.background = "beige";
+
+        // const lis = document.getElementsByTagName("li");
+        const lis = document.querySelectorAll("li");
+        console.log(lis);
+        // lis[1].style.background = "yellow";
+
+        // for
+        for (let i=0; i<lis.length; i++) {
+            lis[i].style.background = "yellow";
+        }
+
+        // for of
+        // for (let li of lis) {
+        //     li.style.color = "red";
+        // }
+
+        // for each
+        // getElementsByTagName 에는 오류 querySelectorAll 지정 해야함
+        lis.forEach((li, index)=> {
+            li.style.color = "blue";
+            console.log(lis);
+        });
+
+
+    </script>
+</body>
+</html>

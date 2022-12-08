@@ -3,41 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>조건문 예제</title>
-    <style>
-        p { padding: 20px; background: #c5c7e4; }
-    </style>
+    <title>요소접근</title>
 </head>
-<body>
-    <button>크기+</button>
-    <button>크기-</button>
-    <p>텍스트의 크기를 변경하세요</p>
+<body>   
+    <div id="target"></div>
 
     <script>
-      const btn = document.querySelectorAll('button');
-      const pTag = document.querySelector('p');
-      let fontSize  = 30;
-      let changeSize = (state)=> {
-        if (state) {
-          if (fontSize >= 70) return;
-          fontSize += 5;
-        }
-        else {
-          if (fontSize <= 20) return;
-          fontSize -= 5;
-        }
-        pTag.style.fontSize = `${fontSize}px`;
-      }
-
-      btn[0].addEventListener('click', ()=> {
-        changeSize(true);
-      })
-      btn[1].addEventListener('click', ()=> {
-        changeSize(false);
-      })
-
-
-    </script>
+        const target = document.getElementById("target");
+        let name = prompt("이름을 입력하세요");
+        target.innerText = name;
     
+    </script>
 </body>
 </html>
