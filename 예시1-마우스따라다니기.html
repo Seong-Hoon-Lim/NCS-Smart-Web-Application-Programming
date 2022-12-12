@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 따라다니기</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        img { position: absolute; }
+
+    </style>
+
+       
+</head>
+<body>
+    <img src="./images/mouse-cursor.png" alt="마우스 포인터" width="25px" height="25px">
+    
+
+    <script>
+        const mouseIcon = document.querySelector("img");
+        const mouse = 0;
+        
+        document.addEventListener("mousemove", (mouse)=> {            
+            mouseIcon.style.left = `${(mouse.clientX)}px`;
+            mouseIcon.style.top = `${(mouse.clientY)}px`;
+        })
+
+
+    </script>
+</body>
+</html>

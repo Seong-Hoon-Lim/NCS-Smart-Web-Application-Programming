@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 흐름방지</title>
+    <style>
+        div { width: 100px; height: 100px; padding: 50px;
+                border: 1px solid #000; }
+        p  { width: 100px; height: 100px;
+                display: block;
+                border: 1px solid #000;
+                background: #f00; }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="pTag">클릭</p>
+    </div>
+    <span>카운팅</span>
+    
+    <script>
+        const divTag = document.querySelector("div");
+        const pTag = document.querySelector("p");
+        const spanTag = document.querySelector("span");
+
+        let counting = ()=> {
+            spanTag.innerText = ++n;
+            event.currentTarget.style.background = "yellow";
+            event.stopPropagation();
+        }
+
+        let n = 0;
+        divTag.addEventListener("click", counting)       
+        pTag.addEventListener("click", counting)       
+        
+
+
+    </script>
+
+</body>
+</html>

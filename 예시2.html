@@ -3,46 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>갤러리 효과</title>
+    <title>객체다루기</title>
     <style>
-      body { text-align: center; }
-      figure { height: 300px; }
-      button { font-size: 30px; }
+        ul { display: flex; }
+        li { 
+            list-style: none;
+            width: 200px; height: 100px;
+            border: 1px solid #000;
+         }
+
 
     </style>
+
 </head>
 <body>
-  <figure>
-    <img src="images/pic_1.jpg" alt="" width="200">
-  </figure>
-  <button>이전</button>
-  <button>다음</button>
+    <ul>
+        <li><p>문단</p></li>
+        <li><p>문단</p></li>
+        <li><p>문단</p></li>
+        <li><p>문단</p></li>
+    </ul>
+    <script>
+        // li를 클릭시 클릭한 li의 자식인 p태그를 삭제
+        const lis = document.querySelectorAll("li"); 
+        const pTag = document.querySelectorAll("p");
 
-<script>
-  const imgTag = document.querySelector("img");
-  const btn = document.querySelectorAll("button");
-  let num = 1;
-  let gallery = (state)=> {
-    if (state) {
-          if (num == 9) num = 0; //한방향으로 순환
-          num ++;
-        }
-        else {
-          if (num == 1) num = 10; //역방향으로 순환
-          num --;
-        } 
-        imgTag.setAttribute("src",`images/pic_${num}.jpg`);    
-        console.log(num);     
-  } 
+        // lis[0].addEventListener("click",(e)=> {
+        //     let target = e.currentTarget;
+        //     target.removeChild(target.firstElementChild);
+        // })
+        // lis[1].addEventListener("click",(e)=> {
+        //     let target = e.currentTarget;
+        //     target.removeChild(target.firstElementChild);
+        // })
+        // lis[2].addEventListener("click",(e)=> {
+        //     let target = e.currentTarget;
+        //     target.removeChild(target.firstElementChild);
+        // })
+        // lis[3].addEventListener("click",(e)=> {
+        //     let target = e.currentTarget;
+        //     target.removeChild(target.firstElementChild);
+        // })
 
-  btn[0].addEventListener("click", ()=> {
-    gallery(false);  
-  })
+        // for ( let i=0; i<lis.length; i++ ) {          
+        //     lis[i].addEventListener("click",(e)=> {
+        //         let target = e.currentTarget;
+        //         target.removeChild(target.firstElementChild);
+        //     });
+        // }
+    
+        lis.forEach((li) => {
+            li.addEventListener("click", (e)=>{
+                let target = e.currentTarget;
+                    target.removeChild(target.firstElementChild);      
+            })
+        });
 
-  btn[1].addEventListener("click", ()=> {
-    gallery(true);
-  })
+    </script>
 
-</script>    
 </body>
 </html>

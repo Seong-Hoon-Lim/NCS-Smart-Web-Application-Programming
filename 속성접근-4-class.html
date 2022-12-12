@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스활용 classList</title>
+    <style>
+        #target { width: 300px; height: 100px;
+                  border: 1px solid #000; }
+        .active { background: #2a66b6; color: #fff; }
+        .on { font-size: 30px; }
+        .on2 { background: #ff6982; color: #f0f; }
+
+    </style>
+</head>
+<body>
+    <button class="btn">클래스추가</button>
+    <button class="btn">클래스제거</button>
+    <button class="btn">클래스변경</button>
+    <button class="btn">클래스토글</button>
+    <div id="target" class="active">클래스다루기</div>
+
+    <script>
+        const btn = document.querySelectorAll(".btn");
+        const target = document.getElementById("target");
+
+        btn[0].addEventListener("click", ()=> {
+            target.classList.add("on");
+            // target.classList.add("on", "on2");   //여러개 적용시
+        })
+        btn[1].addEventListener("click", ()=> {
+            target.classList.remove("on", "on2");
+        })
+        btn[2].addEventListener("click", ()=> {
+            target.classList.replace("active", "on2");            
+        })
+        btn[3].addEventListener("click", ()=> {
+            target.classList.toggle("on2");
+        })
+
+
+
+
+
+    </script>
+
+</body>
+</html>

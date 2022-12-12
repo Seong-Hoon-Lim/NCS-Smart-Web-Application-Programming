@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체변경</title>
+
+</head>
+<body>
+    <h1>제목1</h1>
+    <div>
+        <h2>제목2</h2>
+    </div>
+
+    <script>
+        const heading = document.querySelector("h1");
+        const divTag = document.querySelector("div");
+        console.log(heading.innerText);
+        console.log(divTag.innerText);
+        console.log(heading.innerHTML);
+        console.log(divTag.innerHTML);
+
+        heading.innerText = "큰제목";
+        divTag.innerHTML = "<p>문단입니다.</p>";
+
+
+    </script>    
+
+</body>
+</html>

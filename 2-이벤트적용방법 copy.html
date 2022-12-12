@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on이벤트 / addEventListener</title>
+
+</head>
+<body>
+    <button>적용</button>
+    <h1>텍스트 바꾸기</h1>
+
+    <script>
+        const btn = document.querySelector("button");
+        const heading = document.querySelector("h1");
+
+        function test1() {
+            alert("test1");
+        }
+        function test2() {
+            alert("test2");
+        }
+        // onclick 방식 (제일 마지막 이벤트를 실행)
+        // btn.onclick = test1;
+        // btn.onclick = test2;
+
+        // addEventListener 방식 (이벤트를 차례대로 모두 수행)
+        // btn.addEventListener("click", test1);
+        // btn.addEventListener("click", test2);
+
+        let n = 32;
+        let test3 = ()=> {
+            n+=5;
+            heading.style.fontSize = `${n}px`;
+        }
+        test3();
+        // btn.addEventListener("mouseenter", test3);
+        // btn.addEventListener("click", test3);
+
+        // map 방식
+        lis = document.querySelectorAll("li");
+        ["mouseenter", "click"].map((e)=>{
+            btn.addEventListener(e, test3);
+        })
+      
+
+    </script>
+    
+</body>
+</html>

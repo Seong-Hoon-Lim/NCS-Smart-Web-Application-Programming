@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트</title>
+    <style>
+        div { width: 200px; height: 200px;
+            border: 1px solid #000; float: left; }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=> {
+            const divTag = document.querySelectorAll("div");
+            const out = document.querySelectorAll(".out");
+            console.log(divTag);
+
+            
+                divTag.forEach((box) => {
+                let dEvent = box.getAttribute("data-event");
+                console.log(dEvent);
+
+                let bg = box.getAttribute("data-color");
+                console.log(bg);
+                    box.addEventListener(dEvent, (e)=>{
+                    e.currentTarget.style.background = bg;
+                    
+                })
+                
+            });
+            out.forEach(box2 => {
+                let dEvent2 = box2.getAttribute("data-event2");
+                console.log(dEvent2);
+                box2.addEventListener(dEvent2, (e)=> {
+                    e.currentTarget.style.background = "transparent";
+                })
+            })
+        });
+            
+
+    </script>
+
+</head>
+<body>
+    <div data-event="click" data-color="lightblue">클릭</div>
+    <div data-event="dblclick" data-color="pink">더블클릭</div>
+    <div class="out" data-event="mousedown" data-event2="mouseup" data-color="lightgreen">눌렀다떼기</div>
+    <div class="out" data-event="mouseover" data-event2="mouseout" data-color="aqua">마우스진입</div>    
+</body>
+</html>
