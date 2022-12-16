@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼이벤트</title>
+</head>
+<body>
+    <form name="people">
+        <legend>개인정보</legend>
+        <input type="text" id="idName" name="userName">
+    </form>
+    <form name="company">
+        <legend>회사정보</legend>
+        <input type="text" name="comName"><br><br>
+        <input type="text" name="part" value="영업부">
+        <input type="text" name="part" value="회계부">
+        <input type="text" name="part" value="인사부">
+    </form>
+    <script>
+        // const id = document.getElementById("idName");
+        const idName = document.people.userName;
+        console.log(idName);
+        idName.style.background = "yellow"
+
+        const partName = document.company.part;
+        console.log(partName);
+        
+        partName.forEach( part => {
+            part.style.background = "lightgreen";        
+        });
+
+
+    </script>
+</body>
+</html>

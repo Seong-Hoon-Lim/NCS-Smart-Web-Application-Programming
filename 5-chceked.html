@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox, radio</title>
+    <style>
+        div { width: 100px; height: 100px;
+                border: 1px solid #000; }
+
+        div.on { background: #5abcf5; }
+
+    </style>
+
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <div>테스트창</div>
+
+    <script>
+        const check = document.getElementById("check");
+        const div = document.querySelector("div");
+        check.addEventListener("click", ()=> {
+            if ( check.checked == true ) {
+                console.log("체크되었습니다");
+                div.classList.add("on");
+            } 
+            else {
+                div.classList.remove("on");
+                console.log("체크해제되었습니다");
+            }
+        })
+
+    </script>
+
+</body>
+</html>
