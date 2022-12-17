@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>on이벤트/addEventListener</title>
+  </head>
+  <body>
+    <button>적용</button>
+    <h1>텍스트 바꾸기</h1>
+    <script>
+      const btn = document.querySelector('button');
+      const heading = document.querySelector('h1');
+
+      function test1() {
+        alert('test1')
+      }
+      function test2() {
+        alert('test2')
+      }
+      // btn.onclick = test1;
+      // btn.onclick = test2;
+      // btn.addEventListener('click', test1);
+      // btn.addEventListener('click', test2);
+
+      let n = 32;
+      let test3 = ()=> {
+        n+=5;
+        heading.style.fontSize = `${n}px`;
+      }
+      // test3();
+      btn.addEventListener('mouseenter', test3)
+      btn.addEventListener('click', test3)
+
+      let active = ['mouseenter', 'click']
+      active.forEach((e)=>{
+        btn.addEventListener(e, test3)
+      })
+
+
+    </script>
+  </body>
+</html>

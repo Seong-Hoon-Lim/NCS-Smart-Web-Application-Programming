@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wheel 이벤트</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=> {
+            const div = document.querySelector("div");
+            let n = 0;         
+            window.addEventListener("wheel", (e)=> {       
+
+                if ( e.wheelDelta < 0 ) {    
+                    n += 0.05;
+                    if ( n > 1 ) n = 1;
+                    div.style.opacity = n;
+                    console.log(n);
+                }
+                else {
+                    n-= 0.05;
+                    if ( n < 1 ) n = 0;
+                    div.style.opacity = n;
+                    console.log(n);
+                }
+            })
+        })
+
+    </script>
+    <style>
+        body { background: #000; display: flex;}
+        div { 
+            margin: 50px auto 0;
+            width: 300px; height: 300px;
+            position: fixed;
+            background: #fff; opacity: 0; }
+    </style>
+    
+</head>
+<body>
+    <div></div>
+    
+</body>
+</html>

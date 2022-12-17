@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll이벤트</title>
+    <style>
+        body { height: 300vh; 
+              background: linear-gradient(to bottom, pink, #9d99d6)}
+        div { position: fixed; top: 20px; }
+    </style>
+</head>
+<body>
+    <div>
+        <button>상단에서 300 아래로</button>
+        <button>현재위치에서 100 만큼 아래로</button>
+        <button>현재위치에서 100 만큼 위로</button>
+    </div>
+    <script>
+        const btn = document.querySelectorAll('button');
+        btn[0].addEventListener('click', ()=> {
+            window.scrollTo(0, 300);
+            console.log(window.scrollY);
+        })
+        btn[1].addEventListener('click', ()=> {
+            window.scrollBy(0, 100);
+            console.log(window.scrollY);
+        })
+        btn[2].addEventListener('click', ()=> {
+            window.scrollBy(0, -100);
+            console.log(window.scrollY);
+        })
+
+    </script>
+</body>
+</html>

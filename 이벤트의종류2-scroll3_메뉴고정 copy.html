@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, ul { margin: 0; padding: 0; }
+        li { list-style: none; }
+        a { text-decoration: none; color: #000; }
+        /* 네비게이션 */
+        nav { 
+            width: 100%; background: rgba(255,255,255,0.5);
+            position: absolute;
+             }
+        
+        nav ul 
+        {   display: flex; 
+            justify-content: center;
+            align-items: center; 
+            height: 70px; 
+        }
+        nav ul li { width: 150px; text-align: center; }
+        nav.on { position: fixed; background: #000; transition: 0.5s; }
+        nav.on a { color: #fff; }
+        /* section */
+        section { height: 100vh; }
+        #slider { background: #9bf0f0; }
+        #content1 { background: #abdeff; }
+        #content2 { background: #abffdc; }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="#">메뉴</a></li>
+          <li><a href="#">메뉴</a></li>
+          <li><a href="#">메뉴</a></li>
+          <li><a href="#">메뉴</a></li>
+          <li><a href="#">메뉴</a></li>
+        </ul>
+    </nav>
+    <section id="slider"></section>
+    <section id="content1"></section>
+    <section id="content2"></section>
+
+    <script>
+        
+        window.addEventListener("scroll", ()=> {        
+        const scroll = window.scrollY;
+        const nav = document.querySelector("nav");
+        const anchor = document.querySelectorAll("a");
+        console.log(scroll);
+        if (scroll >= window.innerHeight) {
+            // nav.style.background = "#000";
+            // anchor.forEach(a => {
+            //     a.style.color = "#fff";
+            // });
+            // nav.style.position = "fixed";
+            nav.classList.add("on");            
+        } else {
+            nav.classList.remove("on");
+        }
+    })
+    
+
+    </script>
+</body>
+</html>

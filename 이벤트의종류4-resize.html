@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resize 이벤트</title>
+       
+</head>
+<body>
+    <h1>카운팅</h1>
+    
+    <script>
+        const heading = document.querySelector("h1");
+        let n = 0;
+        let changeColor = ()=>{
+            
+            heading.innerText = window.innerWidth;
+            const winW = window.innerWidth;
+
+            if ( winW < 1000 ) {
+                document.body.style.background = "lightgreen";
+            }
+            else {
+                document.body.style.background = "lightblue";
+            }
+        }
+            changeColor();    
+            window.addEventListener("resize", ()=> {
+                heading.innerText = ++n;
+                changeColor();
+        })
+        
+
+
+    </script>
+</body>
+</html>

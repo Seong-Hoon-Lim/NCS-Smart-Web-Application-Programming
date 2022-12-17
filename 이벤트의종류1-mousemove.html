@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>mousemove</title>
+    <style>
+        div { width: 300px; height: 300px; 
+            margin: 50px 0 0 50px; 
+            border: 1px solid #000;
+        }
+        p { font-size:30px; }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=> {
+            const div = document.querySelector('div');
+            const p = document.querySelectorAll('p');
+
+            div.addEventListener('mousemove', (e)=> {
+                // screenX, screenY
+                p[0].innerHTML = `screenX: ${e.screenX}, screenY: ${e.screenY}`;
+                // pageX, pageY
+                p[1].innerHTML = `pageX: ${e.pageX}, pageY: ${e.pageY}`;
+                // clientX, clientY
+                p[2].innerHTML = `clientX: ${e.clientX}, clientY: ${e.clientY}`;
+                // offsetX, offsetY
+                p[3].innerHTML = `offsetX: ${e.offsetX}, offsetY: ${e.offsetY}`;
+                // X, Y 소문자
+                p[4].innerHTML = `X: ${e.x}, Y: ${e.y}`;
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>마우스위치알아내기</h1>
+    <div></div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+</html>

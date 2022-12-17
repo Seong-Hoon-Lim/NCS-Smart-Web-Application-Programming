@@ -2,46 +2,33 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트 실행시 디폴트 취소</title>
     <style>
-        div { width: 100px; height: 100px;
-            border: 1px solid #000; }
+        div { width: 100px; height: 100px; border: 1px solid #000; }
     </style>
-    
 </head>
 <body>
-    <a href="https://www.naver.com/">네이버 이동</a>
+    <a href="https://www.naver.com">네이버 이동</a>
     <div>색상변경</div>
     <form>
         <input type="checkbox">맥주
         <input type="checkbox">음료
     </form>
-    
     <script>
-        const aTag = document.querySelector("a");
-        const divTag = document.querySelector("div");
-        const check = document.querySelector("input");
+        const anchor = document.querySelector('a')
+        const div = document.querySelector('div')
+        const check = document.querySelectorAll('input');
 
-        // aTag.addEventListener("click", ()=>{
-        //     event.preventDefault(); //a 태그의 링크이동방지
-        //     divTag.style.background = "blue";
-        // })
-
-        let naver = confirm("네이버로 이동할까요?");
-        aTag.addEventListener("click",()=>{            
-            if (naver == false )
-            event.preventDefault(); //a태그의 링크이동방지
-            divTag.style.background = "blue";
+        anchor.addEventListener('click', ()=> {
+            let naver = confirm('네이버로 이동할까요?')
+            if (naver == false) {
+                event.preventDefault(); // a태그의 링크이동방지
+                div.style.background = "yellow";
+            }
         })
-        check[0].addEventListener("click", (e)=>{
+        check[0].addEventListener('click', (e)=> {
             e.preventDefault();
-        })
-
-        
-
-        
-
+        })        
 
     </script>
 
