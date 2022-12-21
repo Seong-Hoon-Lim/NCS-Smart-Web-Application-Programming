@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>click()</title>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	
+	<button>화면을 변경</button>	
+	<p><img src="flower.jpg" alt="꽃" /></p>	
+	
+	<!---------- jQuery code Start ---------->
+	<script type="text/javascript">
+	
+		// 버튼을 클릭시 꽃 이미지를 바다 이미지로 변경하시오
+		
+		// 초창기 버전
+		// $("button").bind("click", function() {
+		// 	$(`p img`).attr({ src: `sea.jpg`, alt: "바다" });
+		// })
+
+		// 최신 버전
+		$(`button`).on("click", function(){
+			$(`p img`).attr({ src: `sea.jpg`, alt: "바다" })
+		})
+
+		// $(`button`).click(function(){
+		// 	$(`p img`).attr({ src: `sea.jpg`, alt: "바다" })
+		// })
+
+		// 잘은 사용하지 않으나 특정 경우에 사용할 때가 있음
+		// $(document).on("click","button",function(){
+		// 	$(`p img`).attr({ src: `sea.jpg`, alt: "바다" })
+		// })
+			
+		
+	</script>
+
+
+
+
+
+	
+</body>
+</html>
