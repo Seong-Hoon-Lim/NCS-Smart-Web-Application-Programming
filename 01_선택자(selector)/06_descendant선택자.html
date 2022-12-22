@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> descendant  선택자 </title>
+<!-- jQuery library -->
+<script src="../jquery-3.6.2.min.js"></script>
+</head>
+  
+<body>
+
+	<div id="container">
+
+		<header>
+			<h2> Welcome mySite </h2>
+			<p> Lorem Ipsum is simply </p>
+		</header>
+		<nav>
+			<ul>
+				<li>One</li>
+				<li>Two</li>
+				<li>Three</li>
+			</ul>
+		</nav>
+
+		<nav>
+			<ul class="list">
+				<li>One</li>
+				<li>Two</li>
+				<li>Three</li>
+			</ul>
+		</nav>
+
+		<p> Lorem Ipsum is simply </p>
+
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// 선택된 요소의 모든 하위(자손)요소
+		// $(".list li").on("click", function() {
+		// 	$(".list li:nth-child(2)").css("color","red");
+		// 	$(".list li:nth-child(2)").css("background","yellow");
+		// })
+
+		$("ul").on("click", function() {
+			$("li:nth-child(2)", this).css("background", "yellow");
+		})
+		
+
+	</script>
+
+</body>
+</html>
+

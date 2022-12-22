@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../jquery-3.6.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+          //$("#content1")를 기준으로 pink
+            $("#content1").find(".doc p").css("background", "pink");
+          //$(".doc")를 기준으로 skyblue
+            $(".doc").parent().next().children().css("background", "skyblue");
+          //$("#list")를 기준으로 red
+            $("#list").parent().prev().find(".doc h1").css("color", "red");
+
+            $("#content2").prev().find(".doc").next().css("color", "blue");
+
+            $("#list").parent().first("h1").css("color", "hotpink");
+
+            const doc_p = document.querySelector(".doc p");
+            doc_p.style.color = "red";
+        });
+    </script>
+</head>
+<body>
+    <div id="content1">
+        <h1>Lorem Ipsum</h1>
+        <div class="doc">
+            <h1>jQuery Start</h1>
+            <p>Lorem Ipsum is simply...</p>
+        </div>
+        <p>Lorem Ipsum is simply...</p>
+    </div>
+    <div id="content2">
+        <ul id="list">
+            <li>Lorem Ipsum1</li>
+            <li>Lorem Ipsum2</li>
+            <li>Lorem Ipsum3</li>
+        </ul>
+    </div>
+</body>
+</html>
