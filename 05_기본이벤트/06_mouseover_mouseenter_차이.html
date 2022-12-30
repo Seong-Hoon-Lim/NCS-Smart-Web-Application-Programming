@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseover / mouseenter</title>
+</head>
+<script src="../jquery-3.6.2.min.js"></script>
+<style>
+    div { padding: 50px; border: 1px solid #000; }
+    p { width: 200px; height: 200px; 
+        border: 1px solid #000;
+        margin: 0; }
+
+</style>
+<body>
+    <div>
+        <p></p>
+    </div>
+    <span>카운팅</span>
+    
+    <script>
+        let num = 0;
+        // mouseover 를 하는 경우 자식요소 까지 모두 포함하게 됨
+        // $("div").on("mouseover", function() {
+        //     $(`span`).text(++num);
+        // })
+        // mouseenter 하는 경우는 해당 요소만 포함하게 됨
+        $("div").on("mouseenter", function() {
+            $(`span`).text(++num);
+        })
+
+
+    </script>
+</body>
+</html>

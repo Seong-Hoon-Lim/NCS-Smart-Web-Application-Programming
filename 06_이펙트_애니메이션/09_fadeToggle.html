@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> fadeToggle() </title>
+<!-- jQuery library -->
+<script src="../jquery-3.6.2.min.js"></script>
+</head>
+<body>
+
+	<button id="fade">표시 / 비표시</button>
+	<p><img src="flower.jpg" alt="flower" /></p>
+	
+	
+	
+    <!---------- jQuery code Start ---------->
+    <script >
+	
+        // fadeToggle()을 이용한 투명애니메이션 적용하기
+
+        $("#fade").on("click", function() {
+            $("p:not(:animated)").fadeToggle(1000);
+        })
+
+	
+    </script>
+
+
+
+
+
+	
+</body>
+</html>

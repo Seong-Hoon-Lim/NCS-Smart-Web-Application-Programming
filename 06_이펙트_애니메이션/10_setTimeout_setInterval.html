@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> fadeIn() / fadeOut() </title>
+<style type="text/css">
+	img { display:none; }
+</style>
+<!-- jQuery library -->
+<script src="../jquery-3.6.2.min.js"></script>
+</head>
+<body>
+
+	<button class="stop">멈춤</button>
+	<button class="play">재생</button>
+	<img src="flower.jpg" alt="flower" />
+	
+	
+	
+	<!---------- jQuery code Start ---------->
+	<script>
+    
+        // 3초후에 자동으로 이미지가 페이드인되도록 하시오
+        // 3초마다 자동으로 이미지가 페이드를 반복하도록 하시오 
+        // 페이드시작, 페이드멈춤 버튼을 추가하여 페이드 제어하기 	
+		
+		// function fading() {
+		// 	$("img").fadeIn(1000);
+		// }
+		// setTimeout(fading, 3000)
+
+		function fading() {
+			$("img").fadeToggle(1000);
+		}
+		let timer = setInterval(fading, 3000);
+		
+		$(".stop").on("click", function() {
+			clearInterval(timer);
+		})
+		$(".play").on("click", function() {
+			timer = setInterval(fading, 3000);
+		})
+
+
+
+
+	</script>
+
+
+
+
+
+	
+</body>
+</html>
