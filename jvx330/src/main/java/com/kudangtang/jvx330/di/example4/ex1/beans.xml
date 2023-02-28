@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean name="dnsNamingService" class="com.kudangtang.jvx330.di.example4.ex1.DnsNamingService"/>
+	<bean name="jmsNamingSerivce" class="com.kudangtang.jvx330.di.example4.ex1.JmsNamingService"/>
+	<!-- autowire="byName 을 통해 자바빈즈 규약에 따라 JmsNamingService 클래스의 
+		setJmsNaingSerivce() 메소드에서 set을 제외하고 앞글자 소문자로 변경된 네이밍이
+		 name="jmsNamingService" 와 연결해주는 역할을 한다 -->
+	<bean name="byNameClient" class="com.kudangtang.jvx330.di.example4.ex1.ByNameClient"
+		autowire="byName"/>
+		
+	
+
+</beans>
