@@ -3,7 +3,9 @@ package com.kudangtang.jvx400.banking.service;
 import java.util.List;
 
 import com.kudangtang.jvx400.banking.vo.Account;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AccountServiceImpl implements AccountService {
 
 	@Override
