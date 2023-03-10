@@ -8,9 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Happy Bank</title>
 </head>
 <body>
-
+	<header>
+        <h1>로고</h1>
+    </header>
+    <section>
+        <h2>안녕하세요 ${member.name}님</h2>
+    </section>
+    <section>
+    	<button><a href="http://localhost:8080/member/mypage">마이페이지</a></button>
+    	<button><a href="http://localhost:8080/">로그아웃</a></button>
+    </section>
 </body>
 </html>

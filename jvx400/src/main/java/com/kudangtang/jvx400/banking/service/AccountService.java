@@ -2,17 +2,17 @@ package com.kudangtang.jvx400.banking.service;
 
 import java.util.List;
 
-import com.kudangtang.jvx400.banking.vo.Account;
+import com.kudangtang.jvx400.banking.dto.AccountDto;
 
 public interface AccountService {
 	
-	public void addAccount(Account account);
+	public void addAccount(AccountDto account);
 	
-	public void withDraw(Account account, double amount);
+	public void withDraw(AccountDto account, double amount);
 	
-	public List<Account> findAllAccounts();
+	public List<AccountDto> findAllAccounts();
 	
-	public List<Account> findMyAccount(String email);
+	public List<AccountDto> findMyAccount(String email);
 	
 	public void removeAccount(String email);
 	

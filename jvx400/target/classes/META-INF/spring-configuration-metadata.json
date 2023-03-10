@@ -4,7 +4,7 @@
       "name": "spring.datasource.hikari",
       "type": "javax.sql.DataSource",
       "sourceType": "com.kudangtang.jvx400.config.DataSourceConfig",
-      "sourceMethod": "dataSource()"
+      "sourceMethod": "public javax.sql.DataSource dataSource() "
     }
   ],
   "properties": [],

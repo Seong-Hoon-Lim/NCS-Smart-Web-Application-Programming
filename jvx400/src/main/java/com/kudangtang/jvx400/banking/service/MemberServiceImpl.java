@@ -1,27 +1,33 @@
 package com.kudangtang.jvx400.banking.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import com.kudangtang.jvx400.banking.dao.MemberDao;
-import com.kudangtang.jvx400.banking.vo.Member;
+import com.kudangtang.jvx400.banking.domain.Member;
+import com.kudangtang.jvx400.banking.dto.MemberDto;
+import com.kudangtang.jvx400.banking.repository.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 
-@Component("memberService")
+@Service
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
-	private MemberDao memberDao;
+	private MemberRepository memberRepository;
 
 	public MemberServiceImpl(DataSource dataSource) {
-		memberDao = new MemberDao(dataSource);
+		memberRepository = new MemberRepository(dataSource);
 	}
 
+	public MemberServiceImpl(MemberRepository memberRepository) {
+		this.memberRepository = memberRepository;
+	}
+	
 	public MemberServiceImpl() {
-
+		
 	}
 
 	/**
@@ -29,28 +35,31 @@ public class MemberServiceImpl implements MemberService {
 	 * @param member
 	 */
 	@Override
-	public void signupMember(Member member) {
+	public void signupMember(MemberDto member) {
 		// TODO Auto-generated method stub
-		memberDao.addMember(member);
+		memberRepository.addMember(member);
 
 	}
 
 	@Override
-	public Member loginMember(String email, String passwd) {
+	public Member loginMember(String userId) {
 		// TODO Auto-generated method stub
-		return null;
+		Member member = new Member();
+		member = memberRepository.findMemberByUserId(userId);
+		return member;
 	}
 
 	@Override
-	public Member myPage(String email) {
+	public MemberDto myPage(String userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Member> membersFindList() {
+		List<Member> list = new ArrayList<>();
 		// TODO Auto-generated method stub
-		return null;
+		return list;
 	}
 
 }
