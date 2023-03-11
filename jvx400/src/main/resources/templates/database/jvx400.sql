@@ -1,3 +1,4 @@
+USE jvx400;
 DROP TABLE Member;
 
 CREATE TABLE Member (

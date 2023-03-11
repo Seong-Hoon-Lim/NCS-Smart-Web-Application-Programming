@@ -2,7 +2,7 @@ package com.kudangtang.jvx400.banking.service;
 
 import java.util.List;
 
-import com.kudangtang.jvx400.banking.vo.Member;
+import com.kudangtang.jvx400.banking.domain.Member;
 
 public interface MemberrService {
 	
