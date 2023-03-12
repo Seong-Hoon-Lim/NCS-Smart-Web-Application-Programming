@@ -12,7 +12,7 @@
     <form:form method="post" modelAttribute="member">
     
     	<label>아이디</label>
-    	<form:input path="userId" disabled/><br>
+    	<form:input path="userId" readonly="true"/><br>
 		
 		<label>비밀번호</label>
 		<form:password path="passwd"/><br>
@@ -21,7 +21,7 @@
 		<form:input path="name"/><br>
 		
 		<label>주민번호</label>
-		<form:input path="ssn1" maxlength="6"/>-<form:password path="ssn2" maxlength="7" disabled/><br>
+		<form:input path="ssn1" maxlength="6"/>-<form:password path="ssn2" maxlength="7" readonly="true"/><br>
 		
 		<label>E-mail</label>
 		<form:input path="email1"/>@
@@ -38,7 +38,7 @@
 		</form:select>
 		<form:input path="phone2" maxlength="4"/>-<form:input path="phone3" maxlength="4"/><br>		
 		
-		<input type="submit" value="가입하기">
+		<input type="submit" value="수정하기">
 		
 	</form:form>
 </body>

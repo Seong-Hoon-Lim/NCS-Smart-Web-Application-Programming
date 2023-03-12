@@ -3,9 +3,9 @@ package com.kudangtang.jvx400.banking.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.kudangtang.jvx400.banking.dao.MemberDao;
 import com.kudangtang.jvx400.banking.domain.Member;
 import com.kudangtang.jvx400.banking.dto.MemberDto;
-import com.kudangtang.jvx400.banking.repository.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,14 +16,14 @@ import javax.sql.DataSource;
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
-	private MemberRepository memberRepository;
+	private MemberDao memberDao;
 
 	public MemberServiceImpl(DataSource dataSource) {
-		memberRepository = new MemberRepository(dataSource);
+		memberDao = new MemberDao(dataSource);
 	}
 
-	public MemberServiceImpl(MemberRepository memberRepository) {
-		this.memberRepository = memberRepository;
+	public MemberServiceImpl(MemberDao memberDao) {
+		this.memberDao = memberDao;
 	}
 	
 	public MemberServiceImpl() {
@@ -37,7 +37,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void signupMember(MemberDto member) {
 		// TODO Auto-generated method stub
-		memberRepository.addMember(member);
+		memberDao.saveMember(member);
 
 	}
 
@@ -45,14 +45,15 @@ public class MemberServiceImpl implements MemberService {
 	public Member loginMember(String userId) {
 		// TODO Auto-generated method stub
 		Member member = new Member();
-		member = memberRepository.findMemberByUserId(userId);
+		member = memberDao.findMemberByUserId(userId);
 		return member;
 	}
 
 	@Override
-	public MemberDto myPage(String userId) {
+	public void updateMemberInfo(MemberDto member) {
 		// TODO Auto-generated method stub
-		return null;
+		member = new MemberDto();
+		memberDao.updateMember(member);
 	}
 
 	@Override

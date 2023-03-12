@@ -3,6 +3,8 @@ package com.kudangtang.jvx400.banking.dao;
 import javax.sql.DataSource;
 
 import com.kudangtang.jvx400.banking.domain.Member;
+import com.kudangtang.jvx400.banking.dto.MemberDto;
+import com.kudangtang.jvx400.config.MemberRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.stereotype.Component;
@@ -16,10 +18,10 @@ public class MemberDao {
 	private JdbcTemplate jdbcTemplate;
 	
 	public MemberDao(DataSource dataSource) {
-		jdbcTemplate = new JdbcTemplate(dataSource);
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
-	public void addMember(Member member) {
+	public void saveMember(MemberDto member) {
 		String sql = "INSERT INTO Member (userId, passwd, name, ssn, email, phone)"
 				+ " VALUES (?, ?, ?, ?, ?, ?)";
 		jdbcTemplate.update(new PreparedStatementCreator() {
@@ -39,7 +41,14 @@ public class MemberDao {
 		});
 	}
 
-	public void updataMember(Member member) {
+	public Member findMemberByUserId(String userId) {
+		String sql = "SELECT * FROM Member "
+				+ " WHERE userId = ?";
+		return jdbcTemplate.queryForObject(sql, new MemberRowMapper(), userId);
+
+	}
+
+	public void updateMember(MemberDto member) {
 		String sql = "UPDATE Member if(passwd!=NULL AND email==NULL AND phone==NULL) {SET passwd=?}"
 				   				 + "elseif(passwd==NULL AND email!=NULL AND phone==NULL) {SET email=?}"
 								 + "elseif(passwd==NULL AND email==NULL AND phone!=NULL) {SET phone=?}"
@@ -49,9 +58,15 @@ public class MemberDao {
 								 + " WHERE userId=?";
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
-			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+			public PreparedStatement createPreparedStatement(Connection con)
+								throws SQLException {
 				PreparedStatement pstmt = con.prepareStatement(sql);
-			return null;
+				pstmt.setString(1, member.getPasswd());
+				pstmt.setString(2, member.getEmail());
+				pstmt.setString(3, member.getPhone());
+				pstmt.setString(4, member.getUserId());
+
+			return pstmt;
 			}
 		});
 	}

@@ -12,10 +12,19 @@ public interface MemberService {
 	 * @param member
 	 */
 	public void signupMember(MemberDto member);
-	
+
+	/**
+	 * Member 로그인 기능
+	 * @param userId
+	 * @return
+	 */
 	public Member loginMember(String userId);
-	
-	public MemberDto myPage(String email);
+
+	/**
+	 * 마이페이지 회원정보 수정 기능
+	 * @param member
+	 */
+	public void updateMemberInfo(MemberDto member);
 	
 	public List<Member> membersFindList();
 

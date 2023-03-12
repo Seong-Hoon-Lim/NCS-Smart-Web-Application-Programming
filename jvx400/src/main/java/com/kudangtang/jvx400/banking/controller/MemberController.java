@@ -54,7 +54,7 @@ public class MemberController {
     }
     
     /*
-     * 로그인/로그아웃
+     * 로그인
      */
     @GetMapping("/login")
     public String memberLoginForm(@ModelAttribute("loginForm") MemberController controller) {  
@@ -81,6 +81,9 @@ public class MemberController {
     	}   	    	
     }
     
+	/*
+	 * 로그아웃
+	 */
     @PostMapping("/logout")
     public String memberLogout(HttpServletRequest request) {
     	HttpSession session = request.getSession();
@@ -92,13 +95,28 @@ public class MemberController {
     /*
      * 마이페이지
      */
-    @GetMapping("/mypage")
-    public String membershipPage() {
-    	
+    @RequestMapping(value = "/member/mypage")
+    public String membershipPage(MemberDto member, Model model) {
+		model.addAttribute("member", member);
     	return "member/mypage";
     }
+
+	@GetMapping("/member_modify")
+	public String updateMember(MemberDto member, Model model) {
+		model.addAttribute("member", member);
+		return "member/member_modify";
+	}
     
-    
+    @PostMapping("/mypage_modify")
+	public String updateSucceed(MemberDto member, Model model) {
+		member.setEmail(member.getEmail1() + "@" + member.getEmail2());
+		member.setSsn(member.getSsn1() + "-" + member.getSsn2());
+		member.setPhone(member.getPhone1() + "-" + member.getPhone2()
+											+ "-" + member.getPhone3());
+		model.addAttribute("member", member);
+		memberService.updateMemberInfo(member);
+		return "member/member_modify";
+	}
     
     
     

@@ -20,6 +20,6 @@
         E-mail : ${member.email}<br>
         연락처 : ${member.phone}<br><br>
         
-    <button><a href="http://localhost:8080/">홈으로</a></button>
+    <button><a href="member/index_logined/">홈으로</a></button>
 </body>
 </html>
