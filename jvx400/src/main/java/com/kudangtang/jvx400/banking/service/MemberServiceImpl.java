@@ -57,8 +57,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public List<Member> membersFindList() {
+	public List<Member> membersFindAllList() {
 		List<Member> list = new ArrayList<>();
+		list = memberDao.findAllList();
 		// TODO Auto-generated method stub
 		return list;
 	}

@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component("memberDao")
 public class MemberDao {
@@ -39,23 +41,32 @@ public class MemberDao {
 				return pstmt;
 			}
 		});
-	}
-
+	}	
+	
 	public Member findMemberByUserId(String userId) {
 		String sql = "SELECT * FROM Member "
 				+ " WHERE userId = ?";
 		return jdbcTemplate.queryForObject(sql, new MemberRowMapper(), userId);
 
 	}
+	
+	public List<Member> findAllList() {
+		// TODO Auto-generated method stub
+		List<Member> list = new ArrayList<>();
+		String sql = "SELECT * FROM Member order by cid";
+		list = jdbcTemplate.query(sql, new MemberRowMapper());
+		return list;
+	}
 
 	public void updateMember(MemberDto member) {
-		String sql = "UPDATE Member if(passwd!=NULL AND email==NULL AND phone==NULL) {SET passwd=?}"
-				   				 + "elseif(passwd==NULL AND email!=NULL AND phone==NULL) {SET email=?}"
-								 + "elseif(passwd==NULL AND email==NULL AND phone!=NULL) {SET phone=?}"
-								 + "elseif(passwd!=NULL AND email!=NULL AND phone==NULL) {SET passwd=?, SET email=?}"
-								 + "elseif(passwd!=NULL AND email==NULL AND phone!=NULL) {SET passwd=?, SET phone=?}"
-								 + "elseif(passwd==NULL AND email!=NULL AND phone!=NULL) {SET email=?, SET phone=?}"
-								 + " WHERE userId=?";
+//		String sql = "UPDATE Member if(passwd!=NULL AND email==NULL AND phone==NULL) {SET passwd=?}"
+//				   				 + "elseif(passwd==NULL AND email!=NULL AND phone==NULL) {SET email=?}"
+//								 + "elseif(passwd==NULL AND email==NULL AND phone!=NULL) {SET phone=?}"
+//								 + "elseif(passwd!=NULL AND email!=NULL AND phone==NULL) {SET passwd=?, SET email=?}"
+//								 + "elseif(passwd!=NULL AND email==NULL AND phone!=NULL) {SET passwd=?, SET phone=?}"
+//								 + "elseif(passwd==NULL AND email!=NULL AND phone!=NULL) {SET email=?, SET phone=?}"
+//								 + " WHERE userId=?";
+		String sql = "UPDATE Member SET passwd=?, SET email=?, SET phone=? WHERE userId";
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection con)
@@ -70,5 +81,8 @@ public class MemberDao {
 			}
 		});
 	}
+
+	
+	
 
 }

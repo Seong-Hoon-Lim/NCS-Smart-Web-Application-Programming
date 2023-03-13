@@ -95,27 +95,29 @@ public class MemberController {
     /*
      * 마이페이지
      */
-    @RequestMapping(value = "/member/mypage")
-    public String membershipPage(MemberDto member, Model model) {
-		model.addAttribute("member", member);
+    @GetMapping("/mypage")
+    public String membershipPage() {
     	return "member/mypage";
     }
 
-	@GetMapping("/member_modify")
-	public String updateMember(MemberDto member, Model model) {
-		model.addAttribute("member", member);
-		return "member/member_modify";
+	@PostMapping("/mypage")
+	public String membershipInfo(Model model) {
+		
+		List<Member> members = new ArrayList<>();
+    	model.addAttribute("members", members);
+		return "member/mypage";
+	}
+	
+	@PostMapping("/member_modify")
+	public String updateMember() {
+		
+		return null;
 	}
     
     @PostMapping("/mypage_modify")
-	public String updateSucceed(MemberDto member, Model model) {
-		member.setEmail(member.getEmail1() + "@" + member.getEmail2());
-		member.setSsn(member.getSsn1() + "-" + member.getSsn2());
-		member.setPhone(member.getPhone1() + "-" + member.getPhone2()
-											+ "-" + member.getPhone3());
-		model.addAttribute("member", member);
-		memberService.updateMemberInfo(member);
-		return "member/member_modify";
+	public String updateSucceed() {
+    	
+    	return null;
 	}
     
     

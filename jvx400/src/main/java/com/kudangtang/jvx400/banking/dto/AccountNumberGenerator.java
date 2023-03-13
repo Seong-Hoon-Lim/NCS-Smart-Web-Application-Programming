@@ -7,7 +7,7 @@ public class AccountNumberGenerator {
 	int num1;
 	int num2;
 
-	public static String accountNumberGenerate() {
+	public static String generateAccountNum() {
 		
 		String num1, num2, num3 = "";
 		
@@ -45,6 +45,6 @@ public class AccountNumberGenerator {
 
 	public static void main(String[] args) {
 //		AccountNumberGenerator an = new AccountNumberGenerator();
-		System.out.println(accountNumberGenerate());
+		System.out.println(generateAccountNum());
 	}
 }

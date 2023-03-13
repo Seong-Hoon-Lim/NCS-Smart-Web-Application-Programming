@@ -26,6 +26,6 @@ public interface MemberService {
 	 */
 	public void updateMemberInfo(MemberDto member);
 	
-	public List<Member> membersFindList();
+	public List<Member> membersFindAllList();
 
 }

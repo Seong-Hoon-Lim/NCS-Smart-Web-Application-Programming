@@ -35,7 +35,7 @@ public class Account {
 	
 	public void setAccountNum(String accountNum) {
 		this.accountNum = accountNum;
-		accountNum = (AccountNumberGenerator.accountNumberGenerate());
+		accountNum = (AccountNumberGenerator.generateAccountNum());
 	}
 	
 	public String getAccountNum() {
