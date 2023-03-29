@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WidgetApplication</string>
+    <string name="edit1">숫자1</string>
+    <string name="edit2">숫자2</string>
+    <string name="btnAdd">더하기</string>
+    <string name="btnSub">빼기</string>
+    <string name="btnMul">곱하기</string>
+    <string name="btnDiv">나누기</string>
+    <string name="textResult">결과:</string>
+</resources>
