@@ -36,6 +36,7 @@
 			<label class="col-sm-2 ">아이디</label>
 			<div class="col-sm-3">
 				<input name="id" type="text" class="form-control" placeholder="id">
+				<span class="idCheck"></span>
 				<br><input type="button" name="btnIsDuplication" value="팝업 아이디 중복 확인">
 				<br><input type="button" name="btnIsDuplication2nd" value="ajax 아이디 중복 확인">
 			</div>
@@ -136,7 +137,8 @@
 				window.open('popupIdCheck.jsp?id=' + id, 'IdCheck', 'width = 500, height = 500, top = 100, left = 200, location = no');
 			});
 
-			//2. ajax를 이용한 ID 중복확인
+
+			//2. ajax를 이용한 alert 방식의 ID 중복확인
 			const xhr = new XMLHttpRequest();	//XMLHttpRequest 객체 생성
 			const btnIsDuplication2nd = document.querySelector('input[name=btnIsDuplication2nd]');
 			btnIsDuplication2nd.addEventListener('click', function () {
@@ -162,7 +164,114 @@
 						console.error('Error', xhr.status, xhr.statusText);
 					}
 				}
-			})
+			});
+
+			/**
+			 ajax를 활용한 2. 의 방법을 사용할 때
+			 중복 체크 함수를 재사용하기 위한 ajaxIdCheck() 함수
+			 */
+			function ajaxIdCheck(id, callback) {
+				const xhr = new XMLHttpRequest();
+				xhr.open('GET', 'ajaxIdCheck.jsp?id=' + id);
+				xhr.send();
+				xhr.onreadystatechange = () => {
+					if (xhr.readyState !== XMLHttpRequest.DONE) return;
+
+					if (xhr.status === 200) {
+						const json = JSON.parse(xhr.response);
+						callback(json.result);
+					}
+					else {
+						callback(false);
+					}
+				}
+			}
+			/*
+			리팩토링 된 코드
+			 */
+			// const btnIsDuplication2nd = document.querySelector('input[name=btnIsDuplication2nd]');
+			// btnIsDuplication2nd.addEventListener('click', function () {
+			// 	const id = frmMemberInsert.id.value;
+			// 	ajaxIdCheck(id, function(result) {
+			// 		if (result === 'true') {
+			// 			alert('동일한 아이디가 있습니다.')
+			// 		}
+			// 		else {
+			// 			alert('동일한 아이디가 없습니다.')
+			// 		}
+			// 	});
+			// });
+
+			//3. ajax를 이용한 실시간 ID 중복확인
+			const inputId = document.querySelector('input[name=id]');
+			inputId.addEventListener('keyup', function () {
+				const id = frmMemberInsert.id.value;	//아이디 input에 있는 값
+				const idCheck = document.querySelector('.idCheck');	//결과 문자열이 표현될 영역
+				xhr.open('GET', 'ajaxIdCheck.jsp?id=' + id);	//HTTP 요청 초기화. 통신 방식과 url 설정
+				xhr.send();	//url에 요청을 보냄.
+				//이벤트 등록. XMLHttpRequest 객체의 readyState 프로퍼티 값이 변할 때마다 자동으로 호출.
+				xhr.onreadystatechange = () => {
+					//readyState 프로퍼티의 값이 DONE : 요청한 데이터의 처리가 완료되어 응답할 준비가 완료됨.
+					if (xhr.readyState !== XMLHttpRequest.DONE) return;
+
+					if (xhr.status === 200) {	//서버(url) 에 문서가 존재함
+						const json = JSON.parse(xhr.response);
+						if (json.result === 'true') {
+							idCheck.style.color = 'red';
+							idCheck.innerHTML = '동일한 아이디가 있습니다.';
+						}
+						else {
+							idCheck.style.color = 'gray';
+							idCheck.innerHTML = '동일한 아이디가 없습니다';
+						}
+					}
+					else {	//서버(url)에 문서가 존재하지 않음.
+						console.error('Error', xhr.status, xhr.statusText);
+					}
+				}
+			});
+
+			/**
+			 ajax를 활용한 3. 의 방법을 사용할 때
+			 중복 체크 함수를 재사용하기 위한 checkId() 함수
+			 */
+			function checkId(url, id, onSuccess, onError) {
+				const xhr = new XMLHttpRequest();  // XMLHttpRequest 객체 생성
+				xhr.open('GET', url + '?id=' + id);  // HTTP 요청 초기화. 통신 방식과 url 설정
+				xhr.send();  // url에 요청을 보냄.
+				xhr.onreadystatechange = () => {
+					// readyState 프로퍼티의 값이 DONE : 요청한 데이터의 처리가 완료되어 응답할 준비가 완료됨.
+					if (xhr.readyState !== XMLHttpRequest.DONE) return;
+					if (xhr.status === 200) {  // 서버(url) 에 문서가 존재함
+						const json = JSON.parse(xhr.response);
+						if (json.result === 'true') {
+							onSuccess();
+						} else {
+							onError();
+						}
+					} else {  // 서버(url)에 문서가 존재하지 않음.
+						console.error('Error', xhr.status, xhr.statusText);
+					}
+				}
+			}
+
+			/*
+			리팩토링 된 코드
+			 */
+			// const inputId = document.querySelector('input[name=id]');
+			// const idCheck = document.querySelector('.idCheck');  // 결과 문자열이 표현될 영역
+			// inputId.addEventListener('keyup', function () {
+			// 	const id = frmMemberInsert.id.value;  // 아이디 input에 있는 값
+			// 	checkId('ajaxIdCheck.jsp', id, function () {
+			// 		idCheck.style.color = 'red';
+			// 		idCheck.innerHTML = '동일한 아이디가 있습니다.';
+			// 	}, function () {
+			// 		idCheck.style.color = 'gray';
+			// 		idCheck.innerHTML = '동일한 아이디가 없습니다';
+			// 	});
+			// });
+
+
 
 
 		});
