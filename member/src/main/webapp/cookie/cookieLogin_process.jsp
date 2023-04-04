@@ -4,7 +4,7 @@
     <title>Cookie</title>
 </head>
 <body>
-    <h3>입력에 성공했습니다.</h3>
+
     <%
         request.setCharacterEncoding("UTF-8");
 
@@ -15,9 +15,11 @@
             Cookie cookieId = new Cookie("userId", userId);
 
             response.addCookie(cookieId);
+            System.out.println("쿠키 생성이 성공했습니다.");
             response.sendRedirect("cookieWelcome.jsp");
         }
         else {
+            System.out.println("쿠키 생성이 실패했습니다.");
             response.sendRedirect("cookieLogin.jsp");
         }
     %>

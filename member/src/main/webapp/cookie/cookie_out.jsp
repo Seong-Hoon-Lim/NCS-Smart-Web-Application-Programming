@@ -7,11 +7,12 @@
 
     <%
         Cookie[] cookies = request.getCookies();
+        String userId = null;
 
         for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("userId") && cookies[i].getValue() != null) {
-                cookies[i].setMaxAge(0);
-                response.addCookie(cookies[i]);
+            if (cookies[i].getName().trim().equals("userId")) {
+                userId = cookies[i].getValue();
+                break;
             }
         }
         response.sendRedirect("cookieLogin.jsp");
