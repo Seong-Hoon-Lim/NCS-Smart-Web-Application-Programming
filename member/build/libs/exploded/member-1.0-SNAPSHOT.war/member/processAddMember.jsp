@@ -25,7 +25,7 @@
 				   driver="com.mysql.cj.jdbc.Driver" user="root" password="1234" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
-   INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?, ?, now())
+   INSERT INTO `member` (`id`, `password`, `name`, `gender`, `birth`, `mail`, `phone`, `address`, `regist_day`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, now())
    <sql:param value="<%=id%>" />
 	<sql:param value="<%=password%>" />
 	<sql:param value="<%=name%>" />
